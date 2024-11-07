@@ -7,10 +7,11 @@ import jpg6 from "../../assets/0_start/6.jpg";
 import jpg7 from "../../assets/0_start/7.jpg";
 import jpg8 from "../../assets/0_start/8.jpg";
 import jpg9 from "../../assets/0_start/9.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./StartPage.scss";
+import { useEffect } from "react";
 
-const elements = [
+const cards = [
   {
     src: jpg1,
     text: (
@@ -123,7 +124,7 @@ const elements = [
   },
 ];
 
-function Page({ src, text, orientation, link }) {
+function Card({ src, text, orientation, link }) {
   return (
     <>
       <Link to={link} className="link">
@@ -138,66 +139,69 @@ function Page({ src, text, orientation, link }) {
   );
 }
 
-function StartPage() {
+function Header() {
   return (
     <>
-      <div>
-        {/* <header>
-          <div className="logo ibm-plex-sans-regular">Маминова Анна</div>
-          <h1 className="ibm-plex-sans-bold">Дизайнер книг</h1>
-          <nav>
-            <ul>
-              <li>
-                <a className="ibm-plex-sans-regular nav-link" href="#">
-                  Образование
-                </a>
-              </li>
-              <li>
-                <a className="ibm-plex-sans-regular nav-link" href="#">
-                  Контакты
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header> */}
-        <div className="cards">
-          {elements.map(({ src, text, orientation, link }, i) => (
-            <Page
-              key={i}
-              src={src}
-              text={text}
-              link={link}
-              orientation={orientation}
-            />
-          ))}
-          {/* <div className="product">
-            <a href="#">
-              <img
-                className="horizontal"
-                src={jpg1}
-                alt="Каталог выставки Петра Швецова"
-              />
-              <div class="fcap">
-                <div className="card-text ibm-plex-sans-bold">
-                  Каталог выставки <br />
-                  Петра Швецова
-                </div>
+      <div className="logo ibm-plex-sans-regular">Маминова Анна</div>
+      <h1 className="ibm-plex-sans-bold">Дизайнер книг</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link>
+              <div className="ibm-plex-sans-regular" href="/education">
+                Образование
               </div>
+            </Link>
+          </li>
+          <li>
+            <a className="ibm-plex-sans-regular" href="/contacts">
+              Контакты
             </a>
-          </div>*/}
-        </div>
-        {/* <footer>
-          <a className="ibm-plex-sans-regular nav-link" href="#">
-            Маминова Анна
-          </a>
-          <a className="ibm-plex-sans-regular nav-link" href="#">
-            Образование
-          </a>
-          <a className="ibm-plex-sans-regular nav-link" href="#">
-            Контакты
-          </a>
-        </footer> */}
+          </li>
+        </ul>
+      </nav>
+    </>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <a className="ibm-plex-sans-regular nav-link" href="/">
+        Маминова Анна
+      </a>
+      <a className="ibm-plex-sans-regular nav-link" href="/education">
+        Образование
+      </a>
+      <a className="ibm-plex-sans-regular nav-link" href="/contacts">
+        Контакты
+      </a>
+    </footer>
+  );
+}
+
+function StartPage() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return (
+    <>
+      <Header />
+      <div className="cards">
+        {cards.map(({ src, text, orientation, link }, i) => (
+          <Card
+            key={i}
+            src={src}
+            text={text}
+            link={link}
+            orientation={orientation}
+          />
+        ))}
       </div>
+      <Footer />
     </>
   );
 }
