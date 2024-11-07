@@ -7,6 +7,7 @@ import jpg6 from "../../assets/0_start/6.jpg";
 import jpg7 from "../../assets/0_start/7.jpg";
 import jpg8 from "../../assets/0_start/8.jpg";
 import jpg9 from "../../assets/0_start/9.jpg";
+import { Link } from "react-router-dom";
 import "./StartPage.scss";
 
 const elements = [
@@ -18,6 +19,7 @@ const elements = [
       </span>
     ),
     orientation: "horizontal",
+    link: "/catalog",
   },
   {
     src: jpg2,
@@ -31,6 +33,7 @@ const elements = [
       </span>
     ),
     orientation: "horizontal",
+    link: "/hermitage",
   },
   {
     src: jpg3,
@@ -44,6 +47,7 @@ const elements = [
       </span>
     ),
     orientation: "horizontal",
+    link: "/dinosaurs",
   },
   {
     src: jpg4,
@@ -55,6 +59,7 @@ const elements = [
       </span>
     ),
     orientation: "vertical",
+    link: "/study",
   },
   {
     src: jpg5,
@@ -66,6 +71,7 @@ const elements = [
       </span>
     ),
     orientation: "horizontal",
+    link: "/play",
   },
   {
     src: jpg6,
@@ -77,6 +83,7 @@ const elements = [
       </span>
     ),
     orientation: "horizontal",
+    link: "/guide",
   },
   {
     src: jpg7,
@@ -88,6 +95,7 @@ const elements = [
       </span>
     ),
     orientation: "horizontal",
+    link: "/knockout",
   },
   {
     src: jpg8,
@@ -99,6 +107,7 @@ const elements = [
       </span>
     ),
     orientation: "vertical",
+    link: "/calendar",
   },
   {
     src: jpg9,
@@ -110,17 +119,22 @@ const elements = [
       </span>
     ),
     orientation: "horizontal",
+    link: "/heretics",
   },
 ];
 
-function Page({ src, text, orientation }) {
+function Page({ src, text, orientation, link }) {
   return (
-    <div className="card-wrapper">
-      <img className={`card-image ${orientation}`} src={src} />
-      <div className="white-card-wrapper">
-        <div className="card-text ibm-plex-sans-bold">{text}</div>
-      </div>
-    </div>
+    <>
+      <Link to={link} className="link">
+        <div className="card-wrapper">
+          <img className={`card-image ${orientation}`} src={src} />
+          <div className="white-card-wrapper">
+            <div className="card-text ibm-plex-sans-bold">{text}</div>
+          </div>
+        </div>
+      </Link>
+    </>
   );
 }
 
@@ -147,8 +161,14 @@ function StartPage() {
           </nav>
         </header> */}
         <div className="cards">
-          {elements.map(({ src, text, orientation }, i) => (
-            <Page key={i} src={src} text={text} orientation={orientation} />
+          {elements.map(({ src, text, orientation, link }, i) => (
+            <Page
+              key={i}
+              src={src}
+              text={text}
+              link={link}
+              orientation={orientation}
+            />
           ))}
           {/* <div className="product">
             <a href="#">

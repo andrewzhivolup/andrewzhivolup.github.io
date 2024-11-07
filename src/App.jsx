@@ -1,12 +1,19 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import StartPage from "./components/0/StartPage";
+import { _routes } from "./constants";
 
 function App() {
+  const routes = Object.entries(_routes);
+
   return (
     <>
-      <StartPage></StartPage>
+      <BrowserRouter>
+        <Routes>
+          {routes.map(([path, page], i) => (
+            <Route key={i} path={path} element={page} />
+          ))}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
