@@ -7,9 +7,7 @@ import jpg6 from "../../assets/0_start/6.jpg";
 import jpg7 from "../../assets/0_start/7.jpg";
 import jpg8 from "../../assets/0_start/8.jpg";
 import jpg9 from "../../assets/0_start/9.jpg";
-import { Link, useLocation } from "react-router-dom";
 import "./StartPage.scss";
-import { useEffect } from "react";
 
 const cards = [
   {
@@ -20,7 +18,6 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    link: "/catalog",
   },
   {
     src: jpg2,
@@ -34,7 +31,6 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    link: "/hermitage",
   },
   {
     src: jpg3,
@@ -48,7 +44,6 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    link: "/dinosaurs",
   },
   {
     src: jpg4,
@@ -60,7 +55,6 @@ const cards = [
       </span>
     ),
     orientation: "vertical",
-    link: "/study",
   },
   {
     src: jpg5,
@@ -72,7 +66,6 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    link: "/play",
   },
   {
     src: jpg6,
@@ -84,7 +77,6 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    link: "/guide",
   },
   {
     src: jpg7,
@@ -96,7 +88,6 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    link: "/knockout",
   },
   {
     src: jpg8,
@@ -108,7 +99,6 @@ const cards = [
       </span>
     ),
     orientation: "vertical",
-    link: "/calendar",
   },
   {
     src: jpg9,
@@ -120,21 +110,18 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    link: "/heretics",
   },
 ];
 
 function Card({ src, text, orientation, link }) {
   return (
     <>
-      <Link to={link} className="link">
-        <div className="card-wrapper">
-          <img className={`card-image ${orientation}`} src={src} />
-          <div className="white-card-wrapper">
-            <div className="card-text ibm-plex-sans-bold">{text}</div>
-          </div>
+      <div className="card-wrapper">
+        <img className={`card-image ${orientation}`} src={src} />
+        <div className="white-card-wrapper">
+          <div className="card-text ibm-plex-sans-bold">{text}</div>
         </div>
-      </Link>
+      </div>
     </>
   );
 }
@@ -147,14 +134,12 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <Link>
-              <div className="ibm-plex-sans-regular" href="/education">
-                Образование
-              </div>
-            </Link>
+            <div className="ibm-plex-sans-regular" href="">
+              Образование
+            </div>
           </li>
           <li>
-            <a className="ibm-plex-sans-regular" href="/contacts">
+            <a className="ibm-plex-sans-regular" href="">
               Контакты
             </a>
           </li>
@@ -167,13 +152,13 @@ function Header() {
 function Footer() {
   return (
     <footer>
-      <a className="ibm-plex-sans-regular nav-link" href="/">
+      <a className="ibm-plex-sans-regular nav-link" href="">
         Маминова Анна
       </a>
-      <a className="ibm-plex-sans-regular nav-link" href="/education">
+      <a className="ibm-plex-sans-regular nav-link" href="">
         Образование
       </a>
-      <a className="ibm-plex-sans-regular nav-link" href="/contacts">
+      <a className="ibm-plex-sans-regular nav-link" href="">
         Контакты
       </a>
     </footer>
@@ -181,12 +166,6 @@ function Footer() {
 }
 
 function StartPage() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   return (
     <>
       <Header />
