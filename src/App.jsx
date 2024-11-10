@@ -11,6 +11,42 @@ import {
   card_9,
 } from "./assets/0_cards";
 
+function Header() {
+  return (
+    <>
+      <div className="logo ibm-plex-sans-regular">Маминова Анна</div>
+      <h1 className="ibm-plex-sans-bold">Дизайнер книг</h1>
+      <nav>
+        <ul>
+          <li>
+            <div className="ibm-plex-sans-regular" href="">
+              Образование
+            </div>
+          </li>
+          <li>
+            <a className="ibm-plex-sans-regular" href="">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </>
+  );
+}
+
+function Card({ src, text, orientation }) {
+  return (
+    <>
+      <div className="card-wrapper">
+        <img className={`card-image ${orientation}`} src={src} />
+        <div className="white-card-wrapper">
+          <div className="card-text ibm-plex-sans-bold">{text}</div>
+        </div>
+      </div>
+    </>
+  );
+}
+
 const cards = [
   {
     src: card_1,
@@ -115,39 +151,19 @@ const cards = [
   },
 ];
 
-function Card({ src, text, orientation }) {
+function Cards() {
   return (
-    <>
-      <div className="card-wrapper">
-        <img className={`card-image ${orientation}`} src={src} />
-        <div className="white-card-wrapper">
-          <div className="card-text ibm-plex-sans-bold">{text}</div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-function Header() {
-  return (
-    <>
-      <div className="logo ibm-plex-sans-regular">Маминова Анна</div>
-      <h1 className="ibm-plex-sans-bold">Дизайнер книг</h1>
-      <nav>
-        <ul>
-          <li>
-            <div className="ibm-plex-sans-regular" href="">
-              Образование
-            </div>
-          </li>
-          <li>
-            <a className="ibm-plex-sans-regular" href="">
-              Контакты
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </>
+    <div className="cards">
+      {cards.map(({ src, text, orientation, link }, i) => (
+        <Card
+          key={i}
+          src={src}
+          text={text}
+          link={link}
+          orientation={orientation}
+        />
+      ))}
+    </div>
   );
 }
 
@@ -171,17 +187,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="cards">
-        {cards.map(({ src, text, orientation, link }, i) => (
-          <Card
-            key={i}
-            src={src}
-            text={text}
-            link={link}
-            orientation={orientation}
-          />
-        ))}
-      </div>
+      <Cards />
       <Footer />
     </>
   );
