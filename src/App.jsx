@@ -176,6 +176,10 @@ function Cards() {
   );
 }
 
+function Body({ children }) {
+  return <div className="body-wrapper">{children}</div>;
+}
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -190,7 +194,9 @@ function App() {
   return (
     <>
       <Header />
-      <Cards />
+      <Body>
+        <Cards />
+      </Body>
       <Footer />
     </>
   );
