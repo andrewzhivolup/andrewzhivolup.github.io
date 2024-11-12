@@ -9,8 +9,9 @@ body {
   padding-top: 173px;
 }
 
-//-----------------------------
-
+//---
+//Header
+//---
 header {
   display: flex;
   justify-content: space-between;
@@ -23,21 +24,11 @@ header {
   width: 100%;
   z-index: 1000;
 }
+
 .content-title {
   padding-left: 208px;
   text-align: center;
 }
-
-// @media (max-height: 0x) {
-//   .content-title {
-//     content: "aboba";
-//   }
-// }
-// @media (max-height: 100px) {
-//   .content-title {
-//     content: "12";
-//   }
-// }
 
 .logo {
   font-size: 30px;
@@ -63,8 +54,9 @@ nav ul li a {
   font-size: 18px;
 }
 
-//-----------------------------
-
+//---
+//Footer
+//---
 footer {
   display: flex;
   justify-content: center;
@@ -77,8 +69,9 @@ footer p {
   font-size: 18px;
 }
 
-//-----------------------------
-
+//---
+//CARDS
+//---
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -91,10 +84,12 @@ footer p {
   max-height: 356px;
   height: 356px;
 }
+
 .horizontal {
   max-width: 509px;
   width: 504px;
 }
+
 .vertical {
   max-width: 246px;
   width: 246px;
@@ -126,6 +121,7 @@ footer p {
   opacity: 0;
   transition: opacity 0.3s;
 }
+
 .card-wrapper:hover .white-card-wrapper {
   visibility: visible;
   opacity: 1;
