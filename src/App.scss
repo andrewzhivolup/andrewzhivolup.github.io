@@ -9,17 +9,42 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px;
-  }
+  // padding: 50px;
+  height: 173px;
+  background-color: cadetblue;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.content-title {
+  padding-left: 208px;
+  text-align: center;
+}
+
+// @media (max-height: 0x) {
+//   .content-title {
+//     content: "aboba";
+//   }
+// }
+// @media (max-height: 100px) {
+//   .content-title {
+//     content: "12";
+//   }
+// }
   
   .logo {
     font-size: 30px;
     line-height: 39px;
+  padding-left: 50px;
+  padding-top: 50px;
   }
   
   nav ul {
     display: flex;
     list-style: none;
+  gap: 155px;
+  padding-right: 50px;
   }
   
   nav ul li {
@@ -29,8 +54,10 @@ body {
   nav ul li a {
     text-decoration: none;
     color: #000;
-    font-size: 14px;
+  font-size: 18px;
   }
+
+//-----------------------------
   
   footer {
     display: flex;

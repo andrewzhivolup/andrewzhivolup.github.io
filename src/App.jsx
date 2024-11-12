@@ -13,24 +13,33 @@ import {
 
 function Header() {
   return (
-    <>
-      <div className="logo ibm-plex-sans-regular">Маминова Анна</div>
-      <h1 className="ibm-plex-sans-bold">Дизайнер книг</h1>
+    <header
+      onClick={() => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }}
+    >
+      <div className="logo ibm-plex-sans-regular">
+        <a>Маминова Анна</a>
+      </div>
+      {/* <h1 className="content-title ibm-plex-sans-bold">Дизайнер книг</h1> */}
+      <h1 className="content-title ibm-plex-sans-bold">
+        Групповой автопортрет неизвестного <br /> с хвостом и на шпильках
+      </h1>
       <nav>
         <ul>
           <li>
-            <div className="ibm-plex-sans-regular" href="">
-              Образование
-            </div>
+            <a className="ibm-plex-sans-regular">Образование</a>
           </li>
           <li>
-            <a className="ibm-plex-sans-regular" href="">
-              Контакты
-            </a>
+            <a className="ibm-plex-sans-regular">Контакты</a>
           </li>
         </ul>
       </nav>
-    </>
+    </header>
   );
 }
 
