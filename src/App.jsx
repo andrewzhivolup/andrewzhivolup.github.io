@@ -177,17 +177,11 @@ function Cards() {
 }
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer>
-      <a className="ibm-plex-sans-regular nav-link" href="">
-        Маминова Анна
-      </a>
-      <a className="ibm-plex-sans-regular nav-link" href="">
-        Образование
-      </a>
-      <a className="ibm-plex-sans-regular nav-link" href="">
-        Контакты
-      </a>
+      <p className="ibm-plex-sans-regular">{currentYear}, Маминова Анна ©</p>
     </footer>
   );
 }
