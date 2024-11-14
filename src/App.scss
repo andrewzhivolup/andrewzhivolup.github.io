@@ -122,3 +122,62 @@ footer p {
   visibility: visible;
   opacity: 1;
 }
+//---
+//Education & contacts
+//---
+
+$line-width: 1px;
+$line-color: #000;
+$line-heights: (
+  line_1: 171px,
+  line_2: 193px,
+  line_3: 67px,
+  line_4: 161px,
+  line_5: 305px,
+  line_6: 213px,
+  line_7: 292px,
+  line_8: 286px,
+);
+
+@each $line, $height in $line-heights {
+  .#{$line} {
+    height: $height;
+    width: $line-width;
+    background-color: $line-color;
+  }
+}
+
+.flex-column-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.education-text {
+  text-align: center;
+}
+
+.education-text_18 {
+  font-size: 18px;
+}
+.education-text_30 {
+  font-size: 30px;
+}
+
+.education-text a {
+  color: #000;
+  text-decoration: none;
+}
+
+.contacts-text {
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.contacts-text a {
+  color: #000;
+  text-decoration: none;
+}

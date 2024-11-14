@@ -189,6 +189,103 @@ function Footer() {
     </footer>
   );
 }
+function Education() {
+  return (
+    <div className="education flex-column-container">
+      <div className="line_1" />
+
+      <p className="education-text education-text_18 ibm-plex-sans-regular ">
+        <a href="https://design.hse.ru" target="_blank">
+          <b className="education-text_30 ibm-plex-sans-semibold ">
+            Школа дизайна НИУ ВШЭ
+          </b>
+          <br />
+          Национальный исследовательский университет «Высшая школа экономики»
+          <br />
+        </a>
+        <br />
+        <b className="education-text education-text_30 ibm-plex-sans-semibold">
+          Коммуникационный дизайн
+        </b>
+        <br />
+        2020-2024
+      </p>
+
+      <div className="line_2" />
+
+      <p className="education-text education-text_18 ibm-plex-sans-regular">
+        Практика & Стажировка в брендинговом агентстве
+        <br />
+        <a href="https://www.terminaldesign.ru" target="_blank">
+          <b className="ibm-plex-sans-semibold">«Терминал дизайн»</b>
+        </a>
+      </p>
+
+      <div className="line_3" />
+
+      <p className="education-text education-text_18 ibm-plex-sans-regular">
+        Английский язык — <b className="ibm-plex-sans-semibold">С1</b>
+        <br />
+        Немекий язык — <b className="ibm-plex-sans-semibold">B1</b>
+      </p>
+
+      <div className="line_4" />
+
+      <p className="education-text education-text_18 ibm-plex-sans-regular">
+        <b className="ibm-plex-sans-semibold education-text_30">
+          Художественная школа «Александрино»
+        </b>
+        <br />
+        2009-2018
+      </p>
+
+      <div className="line_5" />
+    </div>
+  );
+}
+
+function Contacts() {
+  return (
+    <div className="contacts flex-column-container">
+      <div className="contacts-text">
+        <p className="ibm-plex-sans-regular">
+          {"Почта: "}
+          <a
+            href="mailto:annatypography@mail.ru&subject=Сотрудничество"
+            target="_blank"
+          >
+            <b className="ibm-plex-sans-semibold">annatypography@mail.ru</b>
+          </a>
+          <br />
+          {"ВКонтакте: "}
+          <a href="https://vk.com/anna_typography" target="_blank">
+            <b className="ibm-plex-sans-semibold">@anna_typography</b>
+          </a>
+          <br />
+          {"Телеграм: "}
+          <a href="https://t.me/annatypography" target="_blank">
+            <b className="ibm-plex-sans-semibold">@annatypography</b>
+          </a>
+        </p>
+      </div>
+      <div className="line_6" />
+      <div className="contacts-text ibm-plex-sans-semibold">
+        <p>
+          <a href="tel:+79062706203" target="_blank">
+            <b>+7 906-270-62-03</b>
+          </a>
+        </p>
+      </div>
+      <div className="line_7" />
+      <div className="contacts-text ibm-plex-sans-semibold">
+        <p>
+          <b>Санкт-Петербург</b>
+        </p>
+      </div>
+      <div className="line_8" />
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -196,6 +293,8 @@ function App() {
       <Header />
       <Body>
         <Cards />
+        <Education />
+        <Contacts />
       </Body>
       <Footer />
     </>
