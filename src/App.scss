@@ -358,3 +358,37 @@ $line-heights: (
   height: 542px;
   width: 245px;
 }
+
+//---
+//Performance
+//---
+
+.performance {
+  color: #ffffff;
+  background-color: #000;
+}
+.image_4_5-performance {
+  height: 727px;
+  width: 509px;
+}
+.container-4_5_performance {
+  display: flex;
+  gap: 15px;
+  height: 727px;
+  width: 1033px;
+}
+.image_4_6_8_10_11_12_13-performance {
+  height: 355px;
+  width: 247px;
+}
+.image_7_9-performance {
+  height: 727px;
+  width: 509px;
+}
+.container-small_performance {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 727px;
+  width: 247px;
+}

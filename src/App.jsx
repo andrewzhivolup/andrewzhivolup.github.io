@@ -304,6 +304,47 @@ function Dinosaurs() {
   );
 }
 
+const performanceImages = [card_5, card_5, card_5];
+
+function Performance() {
+  return (
+    <div className="performance">
+      <SliderSlick images={performanceImages} centerPadding={425} />
+      <div className="main-container">
+        <div className="main-container-text">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              Календарь посвящен искусству перформанса
+              <br />
+              и его авторам. Каждый месяц рассказывает про новый
+              <br />
+              перформанс через типографические приемы.
+            </p>
+          </div>
+        </div>
+        <div className="container-4_5_performance">
+          <img className="image_4_5-performance" src={card_5} />
+          <img className="image_4_5-performance" src={card_5} />
+        </div>
+        <div className="container-small_performance">
+          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+        </div>
+        <img className="image_7_9-performance" src={card_5} />
+        <div className="container-small_performance">
+          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+        </div>
+        <img className="image_7_9-performance" src={card_5} />
+        <div className="container-small_performance">
+          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const hereticsImages = [card_7, card_7, card_7];
 
 function Heretics() {
