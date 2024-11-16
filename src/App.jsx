@@ -1,4 +1,3 @@
-import "./App.scss";
 import {
   card_1,
   card_2,
@@ -10,6 +9,10 @@ import {
   card_8,
   card_9,
 } from "./assets/0_cards";
+
+import "./App.scss";
+import SliderSlick from "./SliderSlick";
+import { useEffect, useState } from "react";
 
 function Header() {
   return (
@@ -26,9 +29,7 @@ function Header() {
         <a>Маминова Анна</a>
       </div>
       {/* <h1 className="content-title ibm-plex-sans-bold">Дизайнер книг</h1> */}
-      <h1 className="content-title ibm-plex-sans-bold">
-        Групповой автопортрет неизвестного <br /> с хвостом и на шпильках
-      </h1>
+      <h1 className="content-title ibm-plex-sans-bold"> Дизайнер книг</h1>
       <nav>
         <ul>
           <li>
@@ -43,10 +44,19 @@ function Header() {
   );
 }
 
-function Card({ src, text, orientation }) {
+function Card({ src, text, orientation, scrollTo }) {
   return (
     <>
-      <div className="card-wrapper">
+      <div
+        className="card-wrapper"
+        onClick={() => {
+          window.scrollTo({
+            top: scrollTo,
+            left: 0,
+            behavior: "smooth",
+          });
+        }}
+      >
         <img className={`card-image ${orientation}`} src={src} />
         <div className="white-card-wrapper">
           <div className="card-text ibm-plex-sans-bold">{text}</div>
@@ -65,6 +75,7 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
+    scrollTo: 1215,
   },
   {
     src: card_2,
@@ -78,6 +89,7 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
+    scrollTo: 4236,
   },
   {
     src: card_3,
@@ -162,14 +174,15 @@ const cards = [
 
 function Cards() {
   return (
-    <div className="cards">
-      {cards.map(({ src, text, orientation, link }, i) => (
+    <div className="cards main-container">
+      {cards.map(({ src, text, orientation, link, scrollTo }, i) => (
         <Card
           key={i}
           src={src}
           text={text}
           link={link}
           orientation={orientation}
+          scrollTo={scrollTo}
         />
       ))}
     </div>
@@ -189,6 +202,111 @@ function Footer() {
     </footer>
   );
 }
+
+const catalogImages = [card_7, card_7, card_7];
+
+function Catalog() {
+  return (
+    <div className="catalog">
+      <SliderSlick images={catalogImages} centerPadding={425} />
+      <div className="main-container">
+        <div className="main-container-text">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              Каталог посвящен выставке Петра Швецова «Групповой автопортрет
+              неизвестного с хвостом и на шпильках».
+              <br />
+              Выставка проходила в 2022 году в галерее современного искусства
+              Марины Гисич в Санкт-Петербурге.
+              <br />
+              <br />
+              Отличительной чертой каталога является калька, на которой
+              располагаются названия работ.
+              <br />
+              Зритель сначала видит имя героини и, перевернув страницу, узнает
+              как она выглядит на картине.
+            </p>
+          </div>
+
+          <div className="main-container-setting">
+            <p>
+              Формат: 180 × 210 мм
+              <br />
+              Бумага: мел. глянц. 130 г/м², калька Spectral 80 г/м²
+              <br />
+              178 страниц
+              <br />
+              Фотограф: Маминова Диана
+            </p>
+          </div>
+        </div>
+
+        <img className="image_4" src={card_7} />
+        <img className="image_5" src={card_7} />
+        <img className="image_6" src={card_7} />
+        <img className="image_7" src={card_7} />
+        <img className="image_8" src={card_7} />
+        <img className="image_9" src={card_7} />
+      </div>
+    </div>
+  );
+}
+
+const hereticsImages = [card_7, card_7, card_7];
+
+function Heretics() {
+  return (
+    <div className="heretics">
+      <SliderSlick images={hereticsImages} centerPadding={425} />
+
+      <div className="main-container">
+        <div className="main-container-text">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              Сборник стихотворений «Песни еретиков»посвящен отношениям человека
+              и природы, в текстах описываются чувства людей, которые не могут
+              найти покоя.
+              <br />
+              <br />
+              Для создания иллюстраций был использован наждак, который помимо
+              тактильных ощущений передает звуки стихотворений.
+            </p>
+          </div>
+
+          <div className="main-container-setting ibm-plex-sans-regular">
+            <p>
+              Формат: 297 × 420 мм
+              <br />
+              Бумага: акварельная тонированная, наждачная
+              <br />
+              9 страниц
+              <br />
+              Фотограф: Маминова Диана
+            </p>
+          </div>
+        </div>
+
+        <img className="image_4-heretics" src={card_7} />
+        <img className="image_5-heretics" src={card_7} />
+        <div className="container-6-789">
+          <img className="image_6-heretics" src={card_7} />
+          <div className="container-789">
+            <img className="image_7_8_9_11_12-heretics" src={card_7} />
+            <img className="image_7_8_9_11_12-heretics" src={card_7} />
+            <img className="image_7_8_9_11_12-heretics" src={card_7} />
+          </div>
+        </div>
+        <img className="image_10_13-heretics" src={card_7} />
+        <div className="container-11-12">
+          <img className="image_7_8_9_11_12-heretics" src={card_7} />
+          <img className="image_7_8_9_11_12-heretics" src={card_7} />
+        </div>
+        <img className="image_10_13-heretics" src={card_7} />
+      </div>
+    </div>
+  );
+}
+
 function Education() {
   return (
     <div className="education flex-column-container">
@@ -250,10 +368,7 @@ function Contacts() {
       <div className="contacts-text">
         <p className="ibm-plex-sans-regular">
           {"Почта: "}
-          <a
-            href="mailto:annatypography@mail.ru&subject=Сотрудничество"
-            target="_blank"
-          >
+          <a href="mailto:annatypography@mail.ru&subject=Сотрудничество">
             <b className="ibm-plex-sans-semibold">annatypography@mail.ru</b>
           </a>
           <br />
@@ -271,7 +386,7 @@ function Contacts() {
       <div className="line_6" />
       <div className="contacts-text ibm-plex-sans-semibold">
         <p>
-          <a href="tel:+79062706203" target="_blank">
+          <a href="tel:+79062706203">
             <b>+7 906-270-62-03</b>
           </a>
         </p>
@@ -288,11 +403,15 @@ function Contacts() {
 }
 
 function App() {
+  const [screenWidth, setScreenWidth] = useState(window.screen.width);
+
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Body>
         <Cards />
+        <Catalog />
+        <Heretics />
         <Education />
         <Contacts />
       </Body>
