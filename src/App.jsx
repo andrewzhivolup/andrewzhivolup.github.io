@@ -304,6 +304,41 @@ function Dinosaurs() {
   );
 }
 
+const knockoutImages = [card_5, card_5, card_5];
+
+function Knockout() {
+  return (
+    <div className="knockout">
+      <SliderSlick images={performanceImages} centerPadding={425} />
+      <div className="main-container">
+        <div className="main-container-text">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              «НОКАУТ» — книга художника, которая раскрывает тему
+              <br />
+              юмора и его психологии. На перчатках написаны шутки
+              <br />
+              и анекдоты, что является метафорой использования юмора
+              <br />
+              в повседневной жизни: для защиты, для нападения,
+              <br />
+              для уклонения.
+            </p>
+          </div>
+          <div className="main-container-setting dino-setings">
+            <p>Фотограф: Маминова Диана</p>
+          </div>
+        </div>
+        <img className="image_4-knockout" src={card_5} />
+        <img className="image_5_7-knockout" src={card_5} />
+        <img className="image_6-knockout" src={card_5} />
+        <img className="image_5_7-knockout" src={card_5} />
+        <img className="image_8-knockout" src={card_5} />
+      </div>
+    </div>
+  );
+}
+
 const performanceImages = [card_5, card_5, card_5];
 
 function Performance() {
@@ -504,6 +539,9 @@ function App() {
       <Body>
         <Cards />
         <Catalog />
+        <Dinosaurs />
+        <Knockout />
+        <Performance />
         <Heretics />
         <Education />
         <Contacts />
