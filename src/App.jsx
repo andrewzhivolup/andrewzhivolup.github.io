@@ -252,6 +252,58 @@ function Catalog() {
   );
 }
 
+const dinosaursImages = [card_5, card_5, card_5];
+
+function Dinosaurs() {
+  return (
+    <div className="dinosaurs">
+      <SliderSlick images={dinosaursImages} centerPadding={425} />
+      <div className="main-container">
+        <div className="main-container-text ">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              Современная интерпретация научно-популярной книги
+              <br />
+              про палеонтологию и динозавров. Адаптированные схемы,
+              <br />
+              таблицы и иллюстрации — все это поможет даже
+              <br />
+              не подготовленному читателю погрузиться в науку.
+            </p>
+          </div>
+
+          <div className="main-container-setting dino-setings">
+            <p>
+              Формат: 210 × 297 мм
+              <br />
+              Бумага: мел. матовая 130 г/м²
+              <br />
+              146 страниц
+              <br />
+              Фотограф: Маминова Диана
+            </p>
+          </div>
+          <img className="image_6-dino" src={card_5} />
+        </div>
+
+        <div className="container-45_7_dino">
+          <div className="container-4_5_dino">
+            <img className="image_4_5_8_9-dino" src={card_5} />
+            <img className="image_4_5_8_9-dino" src={card_5} />
+          </div>
+          <img className="image_7-dino" src={card_5} />
+        </div>
+        <img className="image_4_5_8_9-dino" src={card_5} />
+        <img className="image_4_5_8_9-dino" src={card_5} />
+        <img className="image_10-dino" src={card_5} />
+        <img className="image_11_13-dino" src={card_5} />
+        <img className="image_12-dino" src={card_5} />
+        <img className="image_11_13-dino" src={card_5} />
+      </div>
+    </div>
+  );
+}
+
 const hereticsImages = [card_7, card_7, card_7];
 
 function Heretics() {
