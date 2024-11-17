@@ -412,3 +412,50 @@ $line-heights: (
   height: 910px;
   width: 1819px;
 }
+
+//---
+//Guide
+//---
+.guide-setings {
+  height: 193px;
+}
+.first-container-guide {
+  height: 2026px;
+  width: 1033px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.second-container-guide {
+  height: 1470px;
+  width: 772px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.image_4-guide {
+  height: 727px;
+  width: 1032px;
+}
+.image_5-guide {
+  padding-top: 15px;
+  height: 542px;
+  width: 771px;
+}
+.image_6_7_8_9_10_11_12-guide {
+  height: 171px;
+  width: 247px;
+}
+.small-container-guide {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.image_13-guide {
+  height: 1098px;
+  width: 1032px;
+}
+.image_14-guide {
+  height: 727px;
+  width: 771px;
+}

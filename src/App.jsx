@@ -1,14 +1,14 @@
 import {
-  card_1,
-  card_2,
-  card_3,
-  card_4,
-  card_5,
-  card_6,
-  card_7,
-  card_8,
-  card_9,
-} from "./assets/0_cards";
+  dev_1,
+  dev_2,
+  dev_3,
+  dev_4,
+  dev_5,
+  dev_6,
+  dev_7,
+  dev_8,
+  dev_9,
+} from "./assets/dev";
 
 import "./App.scss";
 import SliderSlick from "./SliderSlick";
@@ -68,7 +68,7 @@ function Card({ src, text, orientation, scrollTo }) {
 
 const cards = [
   {
-    src: card_1,
+    src: dev_1,
     text: (
       <span>
         Каталог выставки <br /> Петра Швецова
@@ -78,7 +78,7 @@ const cards = [
     scrollTo: 1215,
   },
   {
-    src: card_2,
+    src: dev_2,
     text: (
       <span>
         Документальная книга
@@ -92,7 +92,7 @@ const cards = [
     scrollTo: 4236,
   },
   {
-    src: card_3,
+    src: dev_3,
     text: (
       <span>
         Палеонтологический
@@ -105,7 +105,7 @@ const cards = [
     orientation: "horizontal",
   },
   {
-    src: card_4,
+    src: dev_4,
     text: (
       <span>
         Исследуя
@@ -116,7 +116,7 @@ const cards = [
     orientation: "vertical",
   },
   {
-    src: card_5,
+    src: dev_5,
     text: (
       <span>
         Пьеса
@@ -127,7 +127,7 @@ const cards = [
     orientation: "horizontal",
   },
   {
-    src: card_6,
+    src: dev_6,
     text: (
       <span>
         Путеводитель
@@ -138,7 +138,7 @@ const cards = [
     orientation: "horizontal",
   },
   {
-    src: card_7,
+    src: dev_7,
     text: (
       <span>
         Книга художника
@@ -149,7 +149,7 @@ const cards = [
     orientation: "horizontal",
   },
   {
-    src: card_8,
+    src: dev_8,
     text: (
       <span>
         Календарь
@@ -160,7 +160,7 @@ const cards = [
     orientation: "vertical",
   },
   {
-    src: card_9,
+    src: dev_9,
     text: (
       <span>
         Книга художника
@@ -203,7 +203,7 @@ function Footer() {
   );
 }
 
-const catalogImages = [card_7, card_7, card_7];
+const catalogImages = [dev_1, dev_1, dev_1];
 
 function Catalog() {
   return (
@@ -241,18 +241,18 @@ function Catalog() {
           </div>
         </div>
 
-        <img className="image_4" src={card_7} />
-        <img className="image_5" src={card_7} />
-        <img className="image_6" src={card_7} />
-        <img className="image_7" src={card_7} />
-        <img className="image_8" src={card_7} />
-        <img className="image_9" src={card_7} />
+        <img className="image_4" src={dev_1} />
+        <img className="image_5" src={dev_1} />
+        <img className="image_6" src={dev_1} />
+        <img className="image_7" src={dev_1} />
+        <img className="image_8" src={dev_1} />
+        <img className="image_9" src={dev_1} />
       </div>
     </div>
   );
 }
 
-const dinosaursImages = [card_5, card_5, card_5];
+const dinosaursImages = [dev_3, dev_3, dev_3];
 
 function Dinosaurs() {
   return (
@@ -283,33 +283,96 @@ function Dinosaurs() {
               Фотограф: Маминова Диана
             </p>
           </div>
-          <img className="image_6-dino" src={card_5} />
+          <img className="image_6-dino" src={dev_3} />
         </div>
 
         <div className="container-45_7_dino">
           <div className="container-4_5_dino">
-            <img className="image_4_5_8_9-dino" src={card_5} />
-            <img className="image_4_5_8_9-dino" src={card_5} />
+            <img className="image_4_5_8_9-dino" src={dev_3} />
+            <img className="image_4_5_8_9-dino" src={dev_3} />
           </div>
-          <img className="image_7-dino" src={card_5} />
+          <img className="image_7-dino" src={dev_3} />
         </div>
-        <img className="image_4_5_8_9-dino" src={card_5} />
-        <img className="image_4_5_8_9-dino" src={card_5} />
-        <img className="image_10-dino" src={card_5} />
-        <img className="image_11_13-dino" src={card_5} />
-        <img className="image_12-dino" src={card_5} />
-        <img className="image_11_13-dino" src={card_5} />
+        <img className="image_4_5_8_9-dino" src={dev_3} />
+        <img className="image_4_5_8_9-dino" src={dev_3} />
+        <img className="image_10-dino" src={dev_3} />
+        <img className="image_11_13-dino" src={dev_3} />
+        <img className="image_12-dino" src={dev_3} />
+        <img className="image_11_13-dino" src={dev_3} />
       </div>
     </div>
   );
 }
 
-const knockoutImages = [card_5, card_5, card_5];
+const guideImages = [dev_6, dev_6, dev_6];
+
+function Guide() {
+  return (
+    <div className="guide">
+      <SliderSlick images={guideImages} centerPadding={425} />
+      <div className="main-container">
+        <div className="main-container-text">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              Путеводитель по западному побережью США, который
+              <br />
+              рассказывает про один из маршрутов путешествия по трем
+              <br />
+              штатам: Калифорния, Аризона и Невада.
+              <br />
+              <br />
+              Главной особенностью книги является то, что большая
+              <br />
+              часть фотографий, а также путевые заметки были
+              <br />
+              предоставлены семьей путешественников.
+              <br />
+              Такой опыт помог превратить обычный путеводитель
+              <br />в документальный фильм на страницах.
+            </p>
+          </div>
+          <div className="main-container-setting guide-setings">
+            <p>
+              Формат: 170 × 250 мм
+              <br />
+              Бумага: мел. глянц. 130 г/м²
+              <br />
+              158 страниц
+              <br />
+              Фотограф: Маминова Диана
+            </p>
+          </div>
+          <div className="second-container-guide">
+            <img className="image_5-guide" src={dev_6} />
+            <div className="small-container-guide">
+              <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
+              <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
+              <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
+            </div>
+            <img className="image_14-guide" src={dev_6} />
+          </div>
+        </div>
+        <div className="first-container-guide">
+          <img className="image_4-guide" src={dev_6} />
+          <div className="small-container-guide">
+            <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
+            <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
+            <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
+            <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
+          </div>
+          <img className="image_13-guide" src={dev_6} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const knockoutImages = [dev_7, dev_7, dev_7];
 
 function Knockout() {
   return (
     <div className="knockout">
-      <SliderSlick images={performanceImages} centerPadding={425} />
+      <SliderSlick images={knockoutImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
           <div className="main-container-info ibm-plex-sans-regular">
@@ -325,21 +388,21 @@ function Knockout() {
               для уклонения.
             </p>
           </div>
-          <div className="main-container-setting dino-setings">
+          <div className="main-container-setting">
             <p>Фотограф: Маминова Диана</p>
           </div>
         </div>
-        <img className="image_4-knockout" src={card_5} />
-        <img className="image_5_7-knockout" src={card_5} />
-        <img className="image_6-knockout" src={card_5} />
-        <img className="image_5_7-knockout" src={card_5} />
-        <img className="image_8-knockout" src={card_5} />
+        <img className="image_4-knockout" src={dev_7} />
+        <img className="image_5_7-knockout" src={dev_7} />
+        <img className="image_6-knockout" src={dev_7} />
+        <img className="image_5_7-knockout" src={dev_7} />
+        <img className="image_8-knockout" src={dev_7} />
       </div>
     </div>
   );
 }
 
-const performanceImages = [card_5, card_5, card_5];
+const performanceImages = [dev_8, dev_8, dev_8];
 
 function Performance() {
   return (
@@ -358,29 +421,29 @@ function Performance() {
           </div>
         </div>
         <div className="container-4_5_performance">
-          <img className="image_4_5-performance" src={card_5} />
-          <img className="image_4_5-performance" src={card_5} />
+          <img className="image_4_5-performance" src={dev_8} />
+          <img className="image_4_5-performance" src={dev_8} />
         </div>
         <div className="container-small_performance">
-          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
-          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
         </div>
-        <img className="image_7_9-performance" src={card_5} />
+        <img className="image_7_9-performance" src={dev_8} />
         <div className="container-small_performance">
-          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
-          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
         </div>
-        <img className="image_7_9-performance" src={card_5} />
+        <img className="image_7_9-performance" src={dev_8} />
         <div className="container-small_performance">
-          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
-          <img className="image_4_6_8_10_11_12_13-performance" src={card_5} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
+          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
         </div>
       </div>
     </div>
   );
 }
 
-const hereticsImages = [card_7, card_7, card_7];
+const hereticsImages = [dev_9, dev_9, dev_9];
 
 function Heretics() {
   return (
@@ -414,22 +477,22 @@ function Heretics() {
           </div>
         </div>
 
-        <img className="image_4-heretics" src={card_7} />
-        <img className="image_5-heretics" src={card_7} />
+        <img className="image_4-heretics" src={dev_9} />
+        <img className="image_5-heretics" src={dev_9} />
         <div className="container-6-789">
-          <img className="image_6-heretics" src={card_7} />
+          <img className="image_6-heretics" src={dev_9} />
           <div className="container-789">
-            <img className="image_7_8_9_11_12-heretics" src={card_7} />
-            <img className="image_7_8_9_11_12-heretics" src={card_7} />
-            <img className="image_7_8_9_11_12-heretics" src={card_7} />
+            <img className="image_7_8_9_11_12-heretics" src={dev_9} />
+            <img className="image_7_8_9_11_12-heretics" src={dev_9} />
+            <img className="image_7_8_9_11_12-heretics" src={dev_9} />
           </div>
         </div>
-        <img className="image_10_13-heretics" src={card_7} />
+        <img className="image_10_13-heretics" src={dev_9} />
         <div className="container-11-12">
-          <img className="image_7_8_9_11_12-heretics" src={card_7} />
-          <img className="image_7_8_9_11_12-heretics" src={card_7} />
+          <img className="image_7_8_9_11_12-heretics" src={dev_9} />
+          <img className="image_7_8_9_11_12-heretics" src={dev_9} />
         </div>
-        <img className="image_10_13-heretics" src={card_7} />
+        <img className="image_10_13-heretics" src={dev_9} />
       </div>
     </div>
   );
@@ -540,6 +603,7 @@ function App() {
         <Cards />
         <Catalog />
         <Dinosaurs />
+        <Guide />
         <Knockout />
         <Performance />
         <Heretics />
