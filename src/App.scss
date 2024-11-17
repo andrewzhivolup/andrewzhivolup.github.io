@@ -9,6 +9,11 @@ body {
   padding-top: 100px;
 }
 
+.blackpage {
+  color: #ffffff;
+  background-color: #000;
+}
+
 //---
 //Header
 //---
@@ -265,11 +270,6 @@ $line-heights: (
 //Heretics
 //---
 
-.heretics {
-  color: #ffffff;
-  background-color: #000;
-}
-
 .container-6-789 {
   display: flex;
   flex-direction: column;
@@ -363,10 +363,6 @@ $line-heights: (
 //Performance
 //---
 
-.performance {
-  color: #ffffff;
-  background-color: #000;
-}
 .image_4_5-performance {
   height: 727px;
   width: 509px;
@@ -492,4 +488,58 @@ $line-heights: (
 .image_11_15-hermetage {
   height: 542px;
   width: 1033px;
+}
+
+//---
+//study
+//---
+
+.study img {
+  border: 1px solid #fff;
+}
+
+.image_4_5_8_9_10-study {
+  height: 356px;
+  width: 506px;
+}
+.image_6-study {
+  height: 553px;
+  width: 771px;
+}
+.image_7-study {
+  height: 727px;
+  width: 1033x;
+}
+.image_11_12-study {
+  height: 171px;
+  width: 246px;
+}
+.image_13-study {
+  height: 542px;
+  width: 1819px;
+}
+
+//---
+//play
+//---
+
+.image_4_6-play {
+  height: 542px;
+  width: 1032px;
+}
+.image_5-play {
+  height: 542px;
+  width: 771px;
+}
+.image_7-play {
+  height: 169px;
+  width: 1818px;
+}
+.image_8-play {
+  height: 726px;
+  width: 771px;
+}
+.image_9-play {
+  height: 726px;
+  width: 1032px;
 }

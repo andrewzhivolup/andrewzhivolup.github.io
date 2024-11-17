@@ -385,6 +385,117 @@ function Dinosaurs() {
   );
 }
 
+const studyImages = [dev_4, dev_4, dev_4];
+
+function Study() {
+  return (
+    <div className="study blackpage">
+      <SliderSlick images={studyImages} centerPadding={425} />
+      <div className="main-container">
+        <div className="main-container-text">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              Книга посвящена Северо-Западной Экспедиции
+              <br />
+              Государственного Эрмитажа. Раскопки ведутся
+              <br />
+              уже более 60 лет, за это время накопилось множество
+              <br />
+              документальных фотографий и находок.
+              <br />
+              <br /> Книга олицетворяет собой раскоп, а её страницы —
+              <br />
+              слои земли, именно поэтому в работе использовалась
+              <br />
+              тонированная бумага.
+            </p>
+          </div>
+
+          <div className="main-container-setting">
+            <p>
+              Формат: 170 × 240 мм
+              <br />
+              Бумага: Colorlab 110 г/м² (G03, I03, G02)
+              <br />
+              372 страницы
+              <br />
+              Фотограф: Маминова Диана
+            </p>
+          </div>
+          <img className="image_6-study" src={dev_4} />
+        </div>
+        <div className="gap-container-column">
+          <div className="gap-container">
+            <img className="image_4_5_8_9_10-study" src={dev_4} />
+            <img className="image_4_5_8_9_10-study" src={dev_4} />
+          </div>
+          <img className="image_7-study" src={dev_4} />
+        </div>
+        <img className="image_4_5_8_9_10-study" src={dev_4} />
+        <img className="image_4_5_8_9_10-study" src={dev_4} />
+        <img className="image_4_5_8_9_10-study" src={dev_4} />
+        <div className="gap-container-column">
+          <img className="image_11_12-study" src={dev_4} />
+          <img className="image_11_12-study" src={dev_4} />
+        </div>
+        <img className="image_13-study" src={dev_4} />
+      </div>
+    </div>
+  );
+}
+
+const playImages = [dev_5, dev_5, dev_5];
+
+function Play() {
+  return (
+    <div className="play blackpage">
+      <SliderSlick images={playImages} centerPadding={425} />
+      <div className="main-container">
+        <div className="main-container-text">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              Книга переносит на страницы спектакль «Дети проходных
+              <br />
+              дворов vol. 2.0», который был поставлен на сцене Лендока
+              <br />
+              в Санкт-Петербурге. Постановка посвящена творчеству
+              <br />
+              группы «КИНО» и его влиянию на молодое поколение.
+              <br />
+              <br />
+              Специально для книги был разработан акцидентный
+              <br />
+              шрифт по мотивам группы «КИНО», а колонэлементы
+              <br />
+              и плакатные развороты были вдохновлены образом
+              <br />
+              музыкальной кассеты.
+            </p>
+          </div>
+
+          <div className="main-container-setting">
+            <p>
+              Формат: 144 × 210 мм
+              <br />
+              Бумага: офсетная 80 г/м²
+              <br />
+              72 страницы
+              <br />
+              Фотограф: Маминова Диана
+            </p>
+          </div>
+        </div>
+        <img className="image_4_6-play" src={dev_5} />
+        <img className="image_5-play" src={dev_5} />
+        <img className="image_4_6-play" src={dev_5} />
+        <img className="image_7-play" src={dev_5} />
+        <img className="image_8-play" src={dev_5} />
+        <img className="image_9-play" src={dev_5} />
+      </div>
+    </div>
+  );
+}
+
 const guideImages = [dev_6, dev_6, dev_6];
 
 function Guide() {
@@ -487,7 +598,7 @@ const performanceImages = [dev_8, dev_8, dev_8];
 
 function Performance() {
   return (
-    <div className="performance">
+    <div className="performance blackpage">
       <SliderSlick images={performanceImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -528,7 +639,7 @@ const hereticsImages = [dev_9, dev_9, dev_9];
 
 function Heretics() {
   return (
-    <div className="heretics">
+    <div className="heretics blackpage">
       <SliderSlick images={hereticsImages} centerPadding={425} />
 
       <div className="main-container">
@@ -685,6 +796,8 @@ function App() {
         <Catalog />
         <Hermitage />
         <Dinosaurs />
+        <Study />
+        <Play />
         <Guide />
         <Knockout />
         <Performance />
