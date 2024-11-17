@@ -15,6 +15,24 @@ import SliderSlick from "./SliderSlick";
 import { useEffect, useState } from "react";
 
 function Header() {
+  const titles = {
+    0: "Дизайнер книг",
+    1200: "Групповой автопортрет неизвестного <br/> с хвостом и на шпильках",
+    1200: "Долгий ясный день",
+    1200: "Палеонтологический сборник статей: <br/> про динозавров и не только",
+    1200: "Анализ типографики археологических <br/> изданий: канон и его интерпретации",
+    1200: "Пьеса <br/> «Дети проходных дворов»",
+    1200: "192 часа <br/> на западном побережье",
+    1200: "Книга художника <br/> «НОКАУТ»",
+    1200: "PERFORMANCE",
+    1200: "Книга художника <br/> «Песни еретиков»",
+  };
+
+  const [y, setY] = useState(window.scrollY);
+  const [title, setTitle] = useState(titles["0"]);
+
+  useEffect(() => {}, [y]);
+
   return (
     <header
       onClick={() => {
@@ -247,6 +265,69 @@ function Catalog() {
         <img className="image_7" src={dev_1} />
         <img className="image_8" src={dev_1} />
         <img className="image_9" src={dev_1} />
+      </div>
+    </div>
+  );
+}
+
+const hermitageImages = [dev_2, dev_2, dev_2];
+
+function Hermitage() {
+  return (
+    <div className="hermitage">
+      <SliderSlick images={hermitageImages} centerPadding={425} />
+      <div className="main-container">
+        <div className="main-container-text">
+          <div className="main-container-info ibm-plex-sans-regular">
+            <p>
+              Книга посвящена Северо-Западной Экспедиции
+              <br />
+              Государственного Эрмитажа. Раскопки ведутся
+              <br />
+              уже более 60 лет, за это время накопилось множество
+              <br />
+              документальных фотографий и находок.
+              <br />
+              <br /> Книга олицетворяет собой раскоп, а её страницы —
+              <br />
+              слои земли, именно поэтому в работе использовалась
+              <br />
+              тонированная бумага.
+            </p>
+          </div>
+
+          <div className="main-container-setting">
+            <p>
+              Формат: 170 × 240 мм
+              <br />
+              Бумага: Colorlab 110 г/м² (G03, I03, G02)
+              <br />
+              372 страницы
+              <br />
+              Фотограф: Маминова Диана
+            </p>
+          </div>
+        </div>
+
+        <div className="gap-container-column">
+          <div className="gap-container">
+            <img className="image_4_5_12_13-hermetage" src={dev_2} />
+            <img className="image_4_5_12_13-hermetage" src={dev_2} />
+          </div>
+          <div className="gap-container">
+            <img className="image_6_7_8_9-hermetage" src={dev_2} />
+            <img className="image_6_7_8_9-hermetage" src={dev_2} />
+            <img className="image_6_7_8_9-hermetage" src={dev_2} />
+            <img className="image_6_7_8_9-hermetage" src={dev_2} />{" "}
+          </div>
+        </div>
+        <img className="image_10_16-hermetage" src={dev_2} />
+        <img className="image_11_15-hermetage" src={dev_2} />
+        <img className="image_4_5_12_13-hermetage" src={dev_2} />
+        <img className="image_4_5_12_13-hermetage" src={dev_2} />
+        <img className="image_14-hermetage" src={dev_2} />
+        <img className="image_11_15-hermetage" src={dev_2} />
+        <img className="image_10_16-hermetage" src={dev_2} />
       </div>
     </div>
   );
@@ -602,6 +683,7 @@ function App() {
       <Body>
         <Cards />
         <Catalog />
+        <Hermitage />
         <Dinosaurs />
         <Guide />
         <Knockout />

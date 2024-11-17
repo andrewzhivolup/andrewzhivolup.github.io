@@ -459,3 +459,37 @@ $line-heights: (
   height: 727px;
   width: 771px;
 }
+
+//---
+//hermetage
+//---
+
+.image_4_5_12_13-hermetage {
+  height: 356px;
+  width: 509px;
+}
+.image_6_7_8_9-hermetage {
+  height: 171px;
+  width: 247px;
+}
+.gap-container {
+  display: flex;
+  gap: 15px;
+}
+.gap-container-column {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+.image_10_16-hermetage {
+  height: 542px;
+  width: 771px;
+}
+.image_14-hermetage {
+  height: 356px;
+  width: 771px;
+}
+.image_11_15-hermetage {
+  height: 542px;
+  width: 1033px;
+}
