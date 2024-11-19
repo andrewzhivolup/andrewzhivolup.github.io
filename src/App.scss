@@ -110,9 +110,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // padding: 50px;
   height: 100px;
-  background-color: cadetblue;
+  background-color: #ffffff;
   position: fixed;
   top: 0;
   width: 100%;
@@ -121,27 +120,25 @@ header {
 
 .content-title {
   text-align: center;
+  padding-left: 150px;
 }
 
 .logo {
   font-size: 30px;
   line-height: 39px;
+  cursor: pointer;
   padding-left: 50px;
-  padding-top: 50px;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 155px;
+  gap: 150px;
   padding-right: 50px;
 }
 
-nav ul li {
-  margin-right: 20px;
-}
-
 nav ul li a {
+  cursor: pointer;
   text-decoration: none;
   color: #000;
   font-size: 18px;
