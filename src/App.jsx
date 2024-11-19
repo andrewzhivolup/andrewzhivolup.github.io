@@ -456,7 +456,7 @@ function Study() {
             </p>
           </div>
 
-          <div className="main-container-setting">
+          <div className="main-container-setting p15">
             <p>
               Формат: 170 × 240 мм
               <br />
