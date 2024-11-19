@@ -389,7 +389,7 @@ const studyImages = [dev_4, dev_4, dev_4];
 
 function Study() {
   return (
-    <div className="study blackpage">
+    <div className="study black">
       <SliderSlick images={studyImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -448,7 +448,7 @@ const playImages = [dev_5, dev_5, dev_5];
 
 function Play() {
   return (
-    <div className="play blackpage">
+    <div className="play black">
       <SliderSlick images={playImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -598,7 +598,7 @@ const performanceImages = [dev_8, dev_8, dev_8];
 
 function Performance() {
   return (
-    <div className="performance blackpage">
+    <div className="performance black">
       <SliderSlick images={performanceImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -639,7 +639,7 @@ const hereticsImages = [dev_9, dev_9, dev_9];
 
 function Heretics() {
   return (
-    <div className="heretics blackpage">
+    <div className="heretics black">
       <SliderSlick images={hereticsImages} centerPadding={425} />
 
       <div className="main-container">
