@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   catalog_1,
   catalog_2,
@@ -20,10 +21,10 @@ import {
   dev_8,
   dev_9,
 } from "./assets/dev";
+import { _Image, ImageGroup } from "./Image";
+import SliderSlick from "./SliderSlick";
 
 import "./App.scss";
-import SliderSlick from "./SliderSlick";
-import { useEffect, useState } from "react";
 
 function Header() {
   const titles = {
@@ -238,38 +239,38 @@ function Catalog() {
   return (
     <div className="catalog">
       <ImageGroup>
-      <SliderSlick images={catalogImages} centerPadding={425} />
-      <div className="main-container">
-        <div className="main-container-text">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              Каталог посвящен выставке Петра Швецова «Групповой автопортрет
-              неизвестного с хвостом и на шпильках».
-              <br />
-              Выставка проходила в 2022 году в галерее современного искусства
-              Марины Гисич в Санкт-Петербурге.
-              <br />
-              <br />
-              Отличительной чертой каталога является калька, на которой
-              располагаются названия работ.
-              <br />
-              Зритель сначала видит имя героини и, перевернув страницу, узнает
-              как она выглядит на картине.
-            </p>
-          </div>
+        <SliderSlick images={catalogImages} centerPadding={425} />
+        <div className="main-container">
+          <div className="main-container-text">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                Каталог посвящен выставке Петра Швецова «Групповой автопортрет
+                неизвестного с хвостом и на шпильках».
+                <br />
+                Выставка проходила в 2022 году в галерее современного искусства
+                Марины Гисич в Санкт-Петербурге.
+                <br />
+                <br />
+                Отличительной чертой каталога является калька, на которой
+                располагаются названия работ.
+                <br />
+                Зритель сначала видит имя героини и, перевернув страницу, узнает
+                как она выглядит на картине.
+              </p>
+            </div>
 
-          <div className="main-container-setting">
-            <p>
-              Формат: 180 × 210 мм
-              <br />
-              Бумага: мел. глянц. 130 г/м², калька Spectral 80 г/м²
-              <br />
-              178 страниц
-              <br />
-              Фотограф: Маминова Диана
-            </p>
+            <div className="main-container-setting">
+              <p>
+                Формат: 180 × 210 мм
+                <br />
+                Бумага: мел. глянц. 130 г/м², калька Spectral 80 г/м²
+                <br />
+                178 страниц
+                <br />
+                Фотограф: Маминова Диана
+              </p>
+            </div>
           </div>
-        </div>
 
           <_Image className="hidden" hidden src={catalog_1} />
           <_Image className="hidden" hidden src={catalog_2} />
@@ -280,7 +281,7 @@ function Catalog() {
           <_Image className="image_7" src={catalog_7} />
           <_Image className="image_8" src={catalog_8} />
           <_Image className="image_9" src={catalog_9} />
-      </div>
+        </div>
       </ImageGroup>
     </div>
   );
