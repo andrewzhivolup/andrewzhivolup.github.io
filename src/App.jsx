@@ -208,7 +208,7 @@ function Cards() {
 }
 
 function Body({ children }) {
-  return <div className="body-wrapper">{children}</div>;
+  return <div className="body-wrapper adaptive">{children}</div>;
 }
 
 function Footer() {
