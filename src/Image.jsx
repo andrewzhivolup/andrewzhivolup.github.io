@@ -1,4 +1,8 @@
-import { ZoomInOutlined, ZoomOutOutlined } from "@ant-design/icons";
+import {
+  EyeOutlined,
+  ZoomInOutlined,
+  ZoomOutOutlined,
+} from "@ant-design/icons";
 import { Image, Space } from "antd";
 import React from "react";
 
@@ -11,7 +15,8 @@ function _Image({ src, className }) {
         preview={{
           mask: (
             <div style={{ fontSize: 24, color: "white" }}>
-              Предварительный просмотр
+              <EyeOutlined />
+              {" Предпросмотр"}
             </div>
           ),
         }}
@@ -56,4 +61,4 @@ function ImageGroup({ children }) {
   );
 }
 
-export { ImageGroup, _Image };
+export { _Image, ImageGroup };
