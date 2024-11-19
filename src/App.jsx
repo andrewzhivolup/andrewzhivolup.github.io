@@ -1,4 +1,15 @@
 import {
+  catalog_1,
+  catalog_2,
+  catalog_3,
+  catalog_4,
+  catalog_5,
+  catalog_6,
+  catalog_7,
+  catalog_8,
+  catalog_9,
+} from "./assets/1_catalog";
+import {
   dev_1,
   dev_2,
   dev_3,
@@ -221,11 +232,12 @@ function Footer() {
   );
 }
 
-const catalogImages = [dev_1, dev_1, dev_1];
+const catalogImages = [catalog_1, catalog_2, catalog_3];
 
 function Catalog() {
   return (
     <div className="catalog">
+      <ImageGroup>
       <SliderSlick images={catalogImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -259,13 +271,17 @@ function Catalog() {
           </div>
         </div>
 
-        <img className="image_4" src={dev_1} />
-        <img className="image_5" src={dev_1} />
-        <img className="image_6" src={dev_1} />
-        <img className="image_7" src={dev_1} />
-        <img className="image_8" src={dev_1} />
-        <img className="image_9" src={dev_1} />
+          <_Image className="hidden" hidden src={catalog_1} />
+          <_Image className="hidden" hidden src={catalog_2} />
+          <_Image className="hidden" hidden src={catalog_3} />
+          <_Image className="image_4" src={catalog_4} />
+          <_Image className="image_5" src={catalog_5} />
+          <_Image className="image_6" src={catalog_6} />
+          <_Image className="image_7" src={catalog_7} />
+          <_Image className="image_8" src={catalog_8} />
+          <_Image className="image_9" src={catalog_9} />
       </div>
+      </ImageGroup>
     </div>
   );
 }
