@@ -21,6 +21,7 @@ import {
   dev_8,
   dev_9,
 } from "./assets/dev";
+import { Footer } from "./components/Footer";
 import { _Image, ImageGroup } from "./Image";
 import SliderSlick from "./SliderSlick";
 
@@ -270,16 +271,6 @@ function Cards({ refs }) {
 
 function Body({ children }) {
   return <div className="body-wrapper adaptive">{children}</div>;
-}
-
-function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  return (
-    <footer>
-      <p className="ibm-plex-sans-regular">{currentYear}, Маминова Анна ©</p>
-    </footer>
-  );
 }
 
 const catalogImages = [catalog_1, catalog_2, catalog_3];
