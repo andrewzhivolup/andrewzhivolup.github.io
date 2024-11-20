@@ -10,6 +10,7 @@ import {
   catalog_8,
   catalog_9,
 } from "./assets/1_catalog";
+import { study_1, study_2, study_3 } from "./assets/4_study";
 import {
   dev_1,
   dev_2,
