@@ -1,5 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import {
+  card_1,
+  card_2,
+  card_3,
+  card_4,
+  card_5,
+  card_6,
+  card_7,
+  card_8,
+  card_9,
+} from "./assets/0_cards";
+import {
   catalog_1,
   catalog_2,
   catalog_3,
@@ -12,7 +23,6 @@ import {
 } from "./assets/1_catalog";
 import { study_1, study_2, study_3 } from "./assets/4_study";
 import {
-  dev_1,
   dev_2,
   dev_3,
   dev_4,
@@ -179,7 +189,7 @@ function Card({ src, text, orientation, onClick }) {
 const cards = [
   {
     name: "catalog",
-    src: dev_1,
+    src: card_1,
     text: (
       <span>
         Каталог выставки <br /> Петра Швецова
@@ -189,7 +199,7 @@ const cards = [
   },
   {
     name: "hermitage",
-    src: dev_2,
+    src: card_2,
     text: (
       <span>
         Документальная книга
@@ -203,7 +213,7 @@ const cards = [
   },
   {
     name: "dinosaurs",
-    src: dev_3,
+    src: card_3,
     text: (
       <span>
         Палеонтологический
@@ -217,7 +227,7 @@ const cards = [
   },
   {
     name: "study",
-    src: dev_4,
+    src: card_4,
     text: (
       <span>
         Исследуя
@@ -229,7 +239,7 @@ const cards = [
   },
   {
     name: "play",
-    src: dev_5,
+    src: card_5,
     text: (
       <span>
         Пьеса
@@ -241,7 +251,7 @@ const cards = [
   },
   {
     name: "guide",
-    src: dev_6,
+    src: card_6,
     text: (
       <span>
         Путеводитель
@@ -253,7 +263,7 @@ const cards = [
   },
   {
     name: "knockout",
-    src: dev_7,
+    src: card_7,
     text: (
       <span>
         Книга художника
@@ -265,7 +275,7 @@ const cards = [
   },
   {
     name: "performance",
-    src: dev_8,
+    src: card_8,
     text: (
       <span>
         Календарь
@@ -277,7 +287,7 @@ const cards = [
   },
   {
     name: "heretics",
-    src: dev_9,
+    src: card_9,
     text: (
       <span>
         Книга художника
