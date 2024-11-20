@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0 auto;
@@ -16,6 +20,11 @@ body {
 
 .hidden {
   display: none;
+}
+
+.anchor {
+  position: relative;
+  top: -100px;
 }
 
 @media screen and (max-width: 10240px) {

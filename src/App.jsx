@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   catalog_1,
   catalog_2,
@@ -26,7 +26,7 @@ import SliderSlick from "./SliderSlick";
 
 import "./App.scss";
 
-function Header() {
+function Header({ refs }) {
   const titles = {
     0: <span>Дизайнер книг</span>,
     1: (
@@ -75,26 +75,42 @@ function Header() {
   useEffect(() => {}, [y]);
 
   return (
-    <header
-      onClick={() => {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-      }}
-    >
+    <header>
       <div className="logo ibm-plex-sans-regular">
-        <a>Маминова Анна</a>
+        <a
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          Маминова Анна
+        </a>
       </div>
       <h1 className="content-title ibm-plex-sans-bold">{title}</h1>
       <nav>
         <ul>
           <li>
-            <a className="ibm-plex-sans-regular">Образование</a>
+            <a
+              className="ibm-plex-sans-regular"
+              onClick={() => {
+                refs["education"].current.scrollIntoView();
+              }}
+            >
+              Образование
+            </a>
           </li>
           <li>
-            <a className="ibm-plex-sans-regular">Контакты</a>
+            <a
+              className="ibm-plex-sans-regular"
+              onClick={() => {
+                refs["contacts"].current.scrollIntoView();
+              }}
+            >
+              Контакты
+            </a>
           </li>
         </ul>
       </nav>
@@ -102,19 +118,10 @@ function Header() {
   );
 }
 
-function Card({ src, text, orientation, scrollTo }) {
+function Card({ src, text, orientation, onClick }) {
   return (
     <>
-      <div
-        className="card-wrapper"
-        onClick={() => {
-          window.scrollTo({
-            top: scrollTo,
-            left: 0,
-            behavior: "smooth",
-          });
-        }}
-      >
+      <div className="card-wrapper" onClick={onClick}>
         <img className={`card-image ${orientation}`} src={src} />
         <div className="white-card-wrapper">
           <div className="card-text ibm-plex-sans-bold">{text}</div>
@@ -126,6 +133,7 @@ function Card({ src, text, orientation, scrollTo }) {
 
 const cards = [
   {
+    name: "catalog",
     src: dev_1,
     text: (
       <span>
@@ -133,9 +141,9 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    scrollTo: 1215,
   },
   {
+    name: "hermitage",
     src: dev_2,
     text: (
       <span>
@@ -147,9 +155,9 @@ const cards = [
       </span>
     ),
     orientation: "horizontal",
-    scrollTo: 4236,
   },
   {
+    name: "dinosaurs",
     src: dev_3,
     text: (
       <span>
@@ -163,6 +171,7 @@ const cards = [
     orientation: "horizontal",
   },
   {
+    name: "study",
     src: dev_4,
     text: (
       <span>
@@ -174,6 +183,7 @@ const cards = [
     orientation: "vertical",
   },
   {
+    name: "play",
     src: dev_5,
     text: (
       <span>
@@ -185,6 +195,7 @@ const cards = [
     orientation: "horizontal",
   },
   {
+    name: "guide",
     src: dev_6,
     text: (
       <span>
@@ -196,6 +207,7 @@ const cards = [
     orientation: "horizontal",
   },
   {
+    name: "knockout",
     src: dev_7,
     text: (
       <span>
@@ -207,6 +219,7 @@ const cards = [
     orientation: "horizontal",
   },
   {
+    name: "performance",
     src: dev_8,
     text: (
       <span>
@@ -218,6 +231,7 @@ const cards = [
     orientation: "vertical",
   },
   {
+    name: "heretics",
     src: dev_9,
     text: (
       <span>
@@ -230,19 +244,26 @@ const cards = [
   },
 ];
 
-function Cards() {
+function Cards({ refs }) {
   return (
     <div className="cards main-container">
-      {cards.map(({ src, text, orientation, link, scrollTo }, i) => (
-        <Card
-          key={i}
-          src={src}
-          text={text}
-          link={link}
-          orientation={orientation}
-          scrollTo={scrollTo}
-        />
-      ))}
+      {cards.map(({ src, text, orientation, link, name }, i) => {
+        const ref = refs[name];
+        const onClick = () => {
+          ref.current.scrollIntoView();
+        };
+
+        return (
+          <Card
+            key={i}
+            src={src}
+            text={text}
+            link={link}
+            orientation={orientation}
+            onClick={onClick}
+          />
+        );
+      })}
     </div>
   );
 }
@@ -263,9 +284,10 @@ function Footer() {
 
 const catalogImages = [catalog_1, catalog_2, catalog_3];
 
-function Catalog() {
+function Catalog({ refs }) {
   return (
     <div className="catalog">
+      <div ref={refs} className="anchor"></div>
       <ImageGroup>
         <SliderSlick images={catalogImages} centerPadding={425} />
         <div className="main-container">
@@ -317,9 +339,10 @@ function Catalog() {
 
 const hermitageImages = [dev_2, dev_2, dev_2];
 
-function Hermitage() {
+function Hermitage({ refs }) {
   return (
     <div className="hermitage">
+      <div ref={refs} className="anchor"></div>
       <SliderSlick images={hermitageImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -380,9 +403,10 @@ function Hermitage() {
 
 const dinosaursImages = [dev_3, dev_3, dev_3];
 
-function Dinosaurs() {
+function Dinosaurs({ refs }) {
   return (
     <div className="dinosaurs">
+      <div ref={refs} className="anchor"></div>
       <SliderSlick images={dinosaursImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text ">
@@ -432,9 +456,10 @@ function Dinosaurs() {
 
 const studyImages = [dev_4, dev_4, dev_4];
 
-function Study() {
+function Study({ refs }) {
   return (
     <div className="study black">
+      <div ref={refs} className="anchor"></div>
       <SliderSlick images={studyImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -491,9 +516,10 @@ function Study() {
 
 const playImages = [dev_5, dev_5, dev_5];
 
-function Play() {
+function Play({ refs }) {
   return (
     <div className="play black">
+      <div ref={refs} className="anchor"></div>
       <SliderSlick images={playImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -543,9 +569,10 @@ function Play() {
 
 const guideImages = [dev_6, dev_6, dev_6];
 
-function Guide() {
+function Guide({ refs }) {
   return (
     <div className="guide">
+      <div ref={refs} className="anchor"></div>
       <SliderSlick images={guideImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -606,9 +633,10 @@ function Guide() {
 
 const knockoutImages = [dev_7, dev_7, dev_7];
 
-function Knockout() {
+function Knockout({ refs }) {
   return (
     <div className="knockout">
+      <div ref={refs} className="anchor"></div>
       <SliderSlick images={knockoutImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -641,9 +669,10 @@ function Knockout() {
 
 const performanceImages = [dev_8, dev_8, dev_8];
 
-function Performance() {
+function Performance({ refs }) {
   return (
     <div className="performance black">
+      <div ref={refs} className="anchor"></div>
       <SliderSlick images={performanceImages} centerPadding={425} />
       <div className="main-container">
         <div className="main-container-text">
@@ -682,9 +711,10 @@ function Performance() {
 
 const hereticsImages = [dev_9, dev_9, dev_9];
 
-function Heretics() {
+function Heretics({ refs }) {
   return (
     <div className="heretics black">
+      <div ref={refs} className="anchor"></div>
       <SliderSlick images={hereticsImages} centerPadding={425} />
 
       <div className="main-container">
@@ -735,9 +765,10 @@ function Heretics() {
   );
 }
 
-function Education() {
+function Education({ refs }) {
   return (
     <div className="education flex-column-container">
+      <div ref={refs} className="anchor"></div>
       <div className="line_1" />
 
       <p className="education-text education-text_18 ibm-plex-sans-regular ">
@@ -790,9 +821,10 @@ function Education() {
   );
 }
 
-function Contacts() {
+function Contacts({ refs }) {
   return (
     <div className="contacts flex-column-container">
+      <div ref={refs} className="anchor"></div>
       <div className="contacts-text">
         <p className="ibm-plex-sans-regular">
           {"Почта: "}
@@ -833,22 +865,51 @@ function Contacts() {
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.screen.width);
 
+  const catalogRef = useRef(null);
+  const hermitageRef = useRef(null);
+  const dinosaursRef = useRef(null);
+  const studyRef = useRef(null);
+  const playgRef = useRef(null);
+  const guideRef = useRef(null);
+  const knockoutRef = useRef(null);
+  const performanceRef = useRef(null);
+  const hereticsRef = useRef(null);
+  const educationRef = useRef(null);
+  const contactsRef = useRef(null);
+
   return (
     <>
-      <Header />
+      <Header
+        refs={{
+          education: educationRef,
+          contacts: contactsRef,
+        }}
+      />
       <Body>
-        <Cards />
-        <Catalog />
-        <Hermitage />
-        <Dinosaurs />
-        <Study />
-        <Play />
-        <Guide />
-        <Knockout />
-        <Performance />
-        <Heretics />
-        <Education />
-        <Contacts />
+        <Cards
+          refs={{
+            catalog: catalogRef,
+            hermitage: hermitageRef,
+            dinosaurs: dinosaursRef,
+            study: studyRef,
+            play: playgRef,
+            guide: guideRef,
+            knockout: knockoutRef,
+            performance: performanceRef,
+            heretics: hereticsRef,
+          }}
+        />
+        <Catalog refs={catalogRef} />
+        <Hermitage refs={hermitageRef} />
+        <Dinosaurs refs={dinosaursRef} />
+        <Study refs={studyRef} />
+        <Play refs={playgRef} />
+        <Guide refs={guideRef} />
+        <Knockout refs={knockoutRef} />
+        <Performance refs={performanceRef} />
+        <Heretics refs={hereticsRef} />
+        <Education refs={educationRef} />
+        <Contacts refs={contactsRef} />
       </Body>
       <Footer />
     </>
