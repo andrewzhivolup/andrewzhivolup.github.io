@@ -29,79 +29,92 @@ import { SliderSlick } from "./components/SliderSlick";
 
 import "./App.scss";
 
-function Header({ refs, scrollTop, theme }) {
-  const titles = {
-    0: <span>Дизайнер книг</span>,
-    1: (
-      <span>
-        Групповой автопортрет неизвестного <br /> с хвостом и на шпильках
-      </span>
-    ),
-    2: <span>Долгий ясный день</span>,
-    3: (
-      <span>
-        Палеонтологический сборник статей: <br /> про динозавров и не только
-      </span>
-    ),
-    4: (
-      <span>
-        Анализ типографики археологических <br /> изданий: канон и его
-        интерпретации
-      </span>
-    ),
-    5: (
-      <span>
-        Пьеса <br /> «Дети проходных дворов»
-      </span>
-    ),
-    6: (
-      <span>
-        192 часа <br /> на западном побережье
-      </span>
-    ),
-    7: (
-      <span>
-        Книга художника <br /> «НОКАУТ»
-      </span>
-    ),
-    8: <span>PERFORMANCE</span>,
-    9: (
-      <span>
-        Книга художника <br /> «Песни еретиков»
-      </span>
-    ),
-    10: <span>Образование</span>,
-    11: <span>Контакты</span>,
-  };
+const titles = {
+  0: <span>Дизайнер книг</span>,
+  1: (
+    <span>
+      Групповой автопортрет неизвестного <br /> с хвостом и на шпильках
+    </span>
+  ),
+  2: <span>Долгий ясный день</span>,
+  3: (
+    <span>
+      Палеонтологический сборник статей: <br /> про динозавров и не только
+    </span>
+  ),
+  4: (
+    <span>
+      Анализ типографики археологических <br /> изданий: канон и его
+      интерпретации
+    </span>
+  ),
+  5: (
+    <span>
+      Пьеса <br /> «Дети проходных дворов»
+    </span>
+  ),
+  6: (
+    <span>
+      192 часа <br /> на западном побережье
+    </span>
+  ),
+  7: (
+    <span>
+      Книга художника <br /> «НОКАУТ»
+    </span>
+  ),
+  8: <span>PERFORMANCE</span>,
+  9: (
+    <span>
+      Книга художника <br /> «Песни еретиков»
+    </span>
+  ),
+  10: <span>Образование</span>,
+  11: <span>Контакты</span>,
+};
 
-  useEffect(() => {
-    getTitleAndTheme(scrollTop);
-  }, [scrollTop]);
+const themes = {
+  0: "white",
+  1: "black",
+};
 
-  function getTitleAndTheme(scrollTop) {
-    const thresholds = [
-      { limit: 1155, titleIndex: 0, theme: "white" },
-      { limit: 3999, titleIndex: 1, theme: "white" },
-      { limit: 6844, titleIndex: 2, theme: "white" },
-      { limit: 9688, titleIndex: 3, theme: "white" },
-      { limit: 12543, titleIndex: 4, theme: "black" },
-      { limit: 15385, titleIndex: 5, theme: "black" },
-      { limit: 18229, titleIndex: 6, theme: "white" },
-      { limit: 21071, titleIndex: 7, theme: "white" },
-      { limit: 23358, titleIndex: 8, theme: "black" },
-      { limit: 26048, titleIndex: 9, theme: "black" },
-      { limit: 27238, titleIndex: 10, theme: "white" },
-      { limit: Infinity, titleIndex: 11, theme: "white" },
-    ];
+const thresholds = [
+  { limit: 1155, titleIndex: 0, theme: themes[0] },
+  { limit: 3999, titleIndex: 1, theme: themes[0] },
+  { limit: 6844, titleIndex: 2, theme: themes[0] },
+  { limit: 9688, titleIndex: 3, theme: themes[0] },
+  { limit: 12543, titleIndex: 4, theme: themes[1] },
+  { limit: 15385, titleIndex: 5, theme: themes[1] },
+  { limit: 18229, titleIndex: 6, theme: themes[0] },
+  { limit: 21071, titleIndex: 7, theme: themes[0] },
+  { limit: 23358, titleIndex: 8, theme: themes[1] },
+  { limit: 26048, titleIndex: 9, theme: themes[1] },
+  { limit: 27238, titleIndex: 10, theme: themes[0] },
+  { limit: 99999, titleIndex: 11, theme: themes[0] },
+];
 
-    for (const { limit, titleIndex, theme } of thresholds) {
-      if (scrollTop < limit) {
-        setTheme(theme);
-        setTitle(titles[titleIndex]);
-        break;
-      }
+function _setTitle(scrollTop, setTitle) {
+  for (const { limit, titleIndex } of thresholds) {
+    if (scrollTop < limit) {
+      setTitle(titles[titleIndex]);
+      break;
     }
   }
+}
+function _setTheme(scrollTop, setTheme) {
+  for (const { limit, theme } of thresholds) {
+    if (scrollTop < limit) {
+      setTheme(theme);
+      break;
+    }
+  }
+}
+
+function Header({ refs, scrollTop, theme }) {
+  useEffect(() => {
+    _setTitle(scrollTop, setTitle);
+    _setTheme(scrollTop, setTheme);
+  }, [scrollTop]);
 
   const [title, setTitle] = useState(titles["0"]);
   const [_theme, setTheme] = useState(theme);
@@ -915,40 +928,11 @@ function App() {
     };
   }, []);
 
-  const themes = {
-    0: "white",
-    1: "black",
-  };
-
   const [theme, setTheme] = useState(themes[0]);
 
   useEffect(() => {
-    getTheme(scrollTop);
+    _setTheme(scrollTop, setTheme);
   }, [scrollTop]);
-
-  function getTheme(scrollTop) {
-    const thresholds = [
-      { limit: 1155, theme: "white" },
-      { limit: 3999, theme: "white" },
-      { limit: 6844, theme: "white" },
-      { limit: 9688, theme: "white" },
-      { limit: 12543, theme: "black" },
-      { limit: 15385, theme: "black" },
-      { limit: 18229, theme: "white" },
-      { limit: 21071, theme: "white" },
-      { limit: 23358, theme: "black" },
-      { limit: 26048, theme: "black" },
-      { limit: 27238, theme: "white" },
-      { limit: Infinity, theme: "white" },
-    ];
-
-    for (const { limit, theme } of thresholds) {
-      if (scrollTop < limit) {
-        setTheme(theme);
-        break;
-      }
-    }
-  }
 
   return (
     <div className={theme}>
