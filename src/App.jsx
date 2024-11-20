@@ -29,7 +29,7 @@ import { SliderSlick } from "./components/SliderSlick";
 
 import "./App.scss";
 
-function Header({ refs, scrollTop }) {
+function Header({ refs, scrollTop, theme }) {
   const titles = {
     0: <span>Дизайнер книг</span>,
     1: (
@@ -75,36 +75,39 @@ function Header({ refs, scrollTop }) {
   };
 
   useEffect(() => {
-    getTitle(scrollTop);
+    getTitleAndTheme(scrollTop);
   }, [scrollTop]);
 
-  function getTitle(scrollTop) {
+  function getTitleAndTheme(scrollTop) {
     const thresholds = [
-      { limit: 1155, titleIndex: 0 },
-      { limit: 3999, titleIndex: 1 },
-      { limit: 6844, titleIndex: 2 },
-      { limit: 9688, titleIndex: 3 },
-      { limit: 12543, titleIndex: 4 },
-      { limit: 15385, titleIndex: 5 },
-      { limit: 18229, titleIndex: 6 },
-      { limit: 21071, titleIndex: 7 },
-      { limit: 23358, titleIndex: 8 },
-      { limit: 26048, titleIndex: 9 },
-      { limit: 27238, titleIndex: 10 },
-      { limit: Infinity, titleIndex: 11 },
+      { limit: 1155, titleIndex: 0, theme: "white" },
+      { limit: 3999, titleIndex: 1, theme: "white" },
+      { limit: 6844, titleIndex: 2, theme: "white" },
+      { limit: 9688, titleIndex: 3, theme: "white" },
+      { limit: 12543, titleIndex: 4, theme: "black" },
+      { limit: 15385, titleIndex: 5, theme: "black" },
+      { limit: 18229, titleIndex: 6, theme: "white" },
+      { limit: 21071, titleIndex: 7, theme: "white" },
+      { limit: 23358, titleIndex: 8, theme: "black" },
+      { limit: 26048, titleIndex: 9, theme: "black" },
+      { limit: 27238, titleIndex: 10, theme: "white" },
+      { limit: Infinity, titleIndex: 11, theme: "white" },
     ];
 
-    for (const { limit, titleIndex } of thresholds) {
+    for (const { limit, titleIndex, theme } of thresholds) {
       if (scrollTop < limit) {
-        return setTitle(titles[titleIndex]);
+        setTheme(theme);
+        setTitle(titles[titleIndex]);
+        break;
       }
     }
   }
 
   const [title, setTitle] = useState(titles["0"]);
+  const [_theme, setTheme] = useState(theme);
 
   return (
-    <header>
+    <header className={_theme}>
       <div className="logo ibm-plex-sans-regular">
         <a
           onClick={() => {
@@ -912,14 +915,50 @@ function App() {
     };
   }, []);
 
+  const themes = {
+    0: "white",
+    1: "black",
+  };
+
+  const [theme, setTheme] = useState(themes[0]);
+
+  useEffect(() => {
+    getTheme(scrollTop);
+  }, [scrollTop]);
+
+  function getTheme(scrollTop) {
+    const thresholds = [
+      { limit: 1155, theme: "white" },
+      { limit: 3999, theme: "white" },
+      { limit: 6844, theme: "white" },
+      { limit: 9688, theme: "white" },
+      { limit: 12543, theme: "black" },
+      { limit: 15385, theme: "black" },
+      { limit: 18229, theme: "white" },
+      { limit: 21071, theme: "white" },
+      { limit: 23358, theme: "black" },
+      { limit: 26048, theme: "black" },
+      { limit: 27238, theme: "white" },
+      { limit: Infinity, theme: "white" },
+    ];
+
+    for (const { limit, theme } of thresholds) {
+      if (scrollTop < limit) {
+        setTheme(theme);
+        break;
+      }
+    }
+  }
+
   return (
-    <>
+    <div className={theme}>
       <Header
         refs={{
           education: educationRef,
           contacts: contactsRef,
         }}
         scrollTop={scrollTop}
+        theme={theme}
       />
       <Body>
         <Cards
@@ -948,7 +987,7 @@ function App() {
         <Contacts refs={contactsRef} />
       </Body>
       <Footer />
-    </>
+    </div>
   );
 }
 

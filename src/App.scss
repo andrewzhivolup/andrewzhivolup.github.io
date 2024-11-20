@@ -16,6 +16,13 @@ body {
 .black {
   color: #ffffff;
   background-color: #000;
+  transition: 1s;
+}
+
+.white {
+  color: #000;
+  background-color: #ffffff;
+  transition: 1s;
 }
 
 .hidden {
@@ -149,7 +156,6 @@ nav ul {
 nav ul li a {
   cursor: pointer;
   text-decoration: none;
-  color: #000;
   font-size: 18px;
 }
 
