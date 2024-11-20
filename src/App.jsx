@@ -825,6 +825,8 @@ function Contacts({ refs }) {
   return (
     <div className="contacts flex-column-container">
       <div ref={refs} className="anchor"></div>
+      <div className="line_6" />
+
       <div className="contacts-text">
         <p className="ibm-plex-sans-regular">
           {"Почта: "}
@@ -843,7 +845,7 @@ function Contacts({ refs }) {
           </a>
         </p>
       </div>
-      <div className="line_6" />
+      <div className="line_7" />
       <div className="contacts-text ibm-plex-sans-semibold">
         <p>
           <a href="tel:+79062706203">
@@ -851,13 +853,13 @@ function Contacts({ refs }) {
           </a>
         </p>
       </div>
-      <div className="line_7" />
+      <div className="line_8" />
       <div className="contacts-text ibm-plex-sans-semibold">
         <p>
           <b>Санкт-Петербург</b>
         </p>
       </div>
-      <div className="line_8" />
+      <div className="line_9" />
     </div>
   );
 }

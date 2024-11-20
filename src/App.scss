@@ -308,10 +308,11 @@ $line-heights: (
   line_2: 193px,
   line_3: 67px,
   line_4: 161px,
-  line_5: 305px,
-  line_6: 213px,
-  line_7: 292px,
-  line_8: 286px,
+  line_5: 153px,
+  line_6: 152px,
+  line_7: 213px,
+  line_8: 292px,
+  line_9: 286px,
 );
 
 @each $line, $height in $line-heights {
