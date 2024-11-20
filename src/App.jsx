@@ -27,7 +27,7 @@ import SliderSlick from "./SliderSlick";
 
 import "./App.scss";
 
-function Header({ refs }) {
+function Header({ refs, scrollTop }) {
   const titles = {
     0: <span>Дизайнер книг</span>,
     1: (
@@ -68,12 +68,38 @@ function Header({ refs }) {
         Книга художника <br /> «Песни еретиков»
       </span>
     ),
+    10: <span>Образование</span>,
+    11: <span>Контакты</span>,
   };
 
-  const [y, setY] = useState(window.scrollY);
-  const [title, setTitle] = useState(titles["0"]);
+  useEffect(() => {
+    getTitle(scrollTop);
+  }, [scrollTop]);
 
-  useEffect(() => {}, [y]);
+  function getTitle(scrollTop) {
+    const thresholds = [
+      { limit: 1155, titleIndex: 0 },
+      { limit: 3999, titleIndex: 1 },
+      { limit: 6844, titleIndex: 2 },
+      { limit: 9688, titleIndex: 3 },
+      { limit: 12543, titleIndex: 4 },
+      { limit: 15385, titleIndex: 5 },
+      { limit: 18229, titleIndex: 6 },
+      { limit: 21071, titleIndex: 7 },
+      { limit: 23358, titleIndex: 8 },
+      { limit: 26048, titleIndex: 9 },
+      { limit: 27238, titleIndex: 10 },
+      { limit: Infinity, titleIndex: 11 },
+    ];
+
+    for (const { limit, titleIndex } of thresholds) {
+      if (scrollTop < limit) {
+        return setTitle(titles[titleIndex]);
+      }
+    }
+  }
+
+  const [title, setTitle] = useState(titles["0"]);
 
   return (
     <header>
@@ -445,7 +471,7 @@ function Dinosaurs({ refs }) {
   );
 }
 
-const studyImages = [dev_4, dev_4, dev_4];
+const studyImages = [study_1, study_2, study_3];
 
 function Study({ refs }) {
   return (
@@ -870,6 +896,20 @@ function App() {
   const educationRef = useRef(null);
   const contactsRef = useRef(null);
 
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      setScrollTop(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Header
@@ -877,6 +917,7 @@ function App() {
           education: educationRef,
           contacts: contactsRef,
         }}
+        scrollTop={scrollTop}
       />
       <Body>
         <Cards
