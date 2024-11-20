@@ -25,7 +25,7 @@ import {
 import { Footer } from "./components/Footer";
 import { ImageGroup } from "./components/ImageGroup";
 import { ImageViewer } from "./components/ImageViewer";
-import SliderSlick from "./SliderSlick";
+import { SliderSlick } from "./components/SliderSlick";
 
 import "./App.scss";
 
