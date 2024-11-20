@@ -23,7 +23,8 @@ import {
   dev_9,
 } from "./assets/dev";
 import { Footer } from "./components/Footer";
-import { _Image, ImageGroup } from "./Image";
+import { ImageGroup } from "./components/ImageGroup";
+import { ImageViewer } from "./components/ImageViewer";
 import SliderSlick from "./SliderSlick";
 
 import "./App.scss";
@@ -340,15 +341,15 @@ function Catalog({ refs }) {
             </div>
           </div>
 
-          <_Image className="hidden" hidden src={catalog_1} />
-          <_Image className="hidden" hidden src={catalog_2} />
-          <_Image className="hidden" hidden src={catalog_3} />
-          <_Image className="image_4" src={catalog_4} />
-          <_Image className="image_5" src={catalog_5} />
-          <_Image className="image_6" src={catalog_6} />
-          <_Image className="image_7" src={catalog_7} />
-          <_Image className="image_8" src={catalog_8} />
-          <_Image className="image_9" src={catalog_9} />
+          <ImageViewer className="hidden" hidden src={catalog_1} />
+          <ImageViewer className="hidden" hidden src={catalog_2} />
+          <ImageViewer className="hidden" hidden src={catalog_3} />
+          <ImageViewer className="image_4" src={catalog_4} />
+          <ImageViewer className="image_5" src={catalog_5} />
+          <ImageViewer className="image_6" src={catalog_6} />
+          <ImageViewer className="image_7" src={catalog_7} />
+          <ImageViewer className="image_8" src={catalog_8} />
+          <ImageViewer className="image_9" src={catalog_9} />
         </div>
       </ImageGroup>
     </div>

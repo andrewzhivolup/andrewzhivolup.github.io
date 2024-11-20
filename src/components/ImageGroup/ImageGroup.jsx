@@ -1,30 +1,7 @@
-import {
-  EyeOutlined,
-  ZoomInOutlined,
-  ZoomOutOutlined,
-} from "@ant-design/icons";
+import { ZoomInOutlined, ZoomOutOutlined } from "@ant-design/icons";
 import { Image, Space } from "antd";
-import React from "react";
 
-function _Image({ src, className }) {
-  return (
-    <div className={className}>
-      <Image
-        src={src}
-        className={className}
-        preview={{
-          mask: (
-            <div style={{ fontSize: 24, color: "white" }}>
-              <EyeOutlined />
-              {" Предпросмотр"}
-            </div>
-          ),
-        }}
-      />
-    </div>
-  );
-}
-function ImageGroup({ children }) {
+export default function ImageGroup({ children }) {
   return (
     <Image.PreviewGroup
       preview={{
@@ -60,5 +37,3 @@ function ImageGroup({ children }) {
     </Image.PreviewGroup>
   );
 }
-
-export { _Image, ImageGroup };
