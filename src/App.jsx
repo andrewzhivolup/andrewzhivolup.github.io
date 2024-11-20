@@ -89,18 +89,66 @@ const themes = {
 };
 
 const thresholds = [
-  { limit: 1155, titleIndex: 0, theme: themes[0] },
-  { limit: 3999, titleIndex: 1, theme: themes[0] },
-  { limit: 6844, titleIndex: 2, theme: themes[0] },
-  { limit: 9688, titleIndex: 3, theme: themes[0] },
-  { limit: 12543, titleIndex: 4, theme: themes[1] },
-  { limit: 15385, titleIndex: 5, theme: themes[1] },
-  { limit: 18229, titleIndex: 6, theme: themes[0] },
-  { limit: 21071, titleIndex: 7, theme: themes[0] },
-  { limit: 23358, titleIndex: 8, theme: themes[1] },
-  { limit: 26048, titleIndex: 9, theme: themes[1] },
-  { limit: 27238, titleIndex: 10, theme: themes[0] },
-  { limit: 99999, titleIndex: 11, theme: themes[0] },
+  {
+    limit: 855,
+    titleIndex: 0,
+    theme: themes[0],
+  },
+  {
+    limit: 3699,
+    titleIndex: 1,
+    theme: themes[0],
+  },
+  {
+    limit: 6544,
+    titleIndex: 2,
+    theme: themes[0],
+  },
+  {
+    limit: 9388,
+    titleIndex: 3,
+    theme: themes[0],
+  },
+  {
+    limit: 12243,
+    titleIndex: 4,
+    theme: themes[1],
+  },
+  {
+    limit: 15085,
+    titleIndex: 5,
+    theme: themes[1],
+  },
+  {
+    limit: 17929,
+    titleIndex: 6,
+    theme: themes[0],
+  },
+  {
+    limit: 20771,
+    titleIndex: 7,
+    theme: themes[0],
+  },
+  {
+    limit: 23058,
+    titleIndex: 8,
+    theme: themes[1],
+  },
+  {
+    limit: 25748,
+    titleIndex: 9,
+    theme: themes[1],
+  },
+  {
+    limit: 26938,
+    titleIndex: 10,
+    theme: themes[0],
+  },
+  {
+    limit: 99699,
+    titleIndex: 11,
+    theme: themes[0],
+  },
 ];
 
 function _setTitle(scrollTop, setTitle) {
