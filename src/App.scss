@@ -388,28 +388,28 @@ $line-heights: (
 }
 
 .image_4-heretics {
-  height: 542px;
-  width: 1033px;
+  height: 542px !important;
+  width: 1033px !important;
 }
 
 .image_5-heretics {
-  height: 727px;
-  width: 1033px;
+  height: 727px !important;
+  width: 1033px !important;
 }
 
 .image_6-heretics {
-  height: 542px;
-  width: 771px;
+  height: 542px !important;
+  width: 771px !important;
 }
 
 .image_7_8_9_11_12-heretics {
-  height: 171px;
-  width: 248px;
+  height: 171px !important;
+  width: 248px !important;
 }
 
 .image_10_13-heretics {
-  height: 542px;
-  width: 770px;
+  height: 542px !important;
+  width: 770px !important;
 }
 
 //---
@@ -419,8 +419,8 @@ $line-heights: (
   height: 193px;
 }
 .image_4_5_8_9-dino {
-  height: 356px;
-  width: 509px;
+  height: 356px !important;
+  width: 509px !important;
 }
 .container-4_5_dino {
   display: flex;
@@ -437,24 +437,24 @@ $line-heights: (
 }
 .image_6-dino {
   height: 542px;
-  width: 771px;
-  padding-top: 15px;
+  width: 771px !important;
+  padding-top: 15px !important;
 }
 .image_7-dino {
-  height: 727px;
-  width: 1032px;
+  height: 727px !important;
+  width: 1032px !important;
 }
 .image_10-dino {
-  width: 771px;
-  height: 356px;
+  width: 771px !important;
+  height: 356px !important;
 }
 .image_11_13-dino {
-  height: 542px;
-  width: 772px;
+  height: 542px !important;
+  width: 772px !important;
 }
 .image_12-dino {
-  height: 542px;
-  width: 245px;
+  height: 542px !important;
+  width: 245px !important;
 }
 
 //---
@@ -462,8 +462,8 @@ $line-heights: (
 //---
 
 .image_4_5-performance {
-  height: 727px;
-  width: 509px;
+  height: 727px !important;
+  width: 509px !important;
 }
 .container-4_5_performance {
   display: flex;
@@ -472,12 +472,12 @@ $line-heights: (
   width: 1033px;
 }
 .image_4_6_8_10_11_12_13-performance {
-  height: 355px;
-  width: 247px;
+  height: 355px !important;
+  width: 247px !important;
 }
 .image_7_9-performance {
-  height: 727px;
-  width: 509px;
+  height: 727px !important;
+  width: 509px !important;
 }
 .container-small_performance {
   display: flex;
@@ -491,20 +491,20 @@ $line-heights: (
 //Knockout
 //---
 .image_4-knockout {
-  height: 542px;
-  width: 1033px;
+  height: 542px !important;
+  width: 1033px !important;
 }
 .image_5_7-knockout {
-  height: 542px;
-  width: 509px;
+  height: 542px !important;
+  width: 509px !important;
 }
 .image_6-knockout {
-  height: 542px;
-  width: 771px;
+  height: 542px !important;
+  width: 771px !important;
 }
 .image_8-knockout {
-  height: 910px;
-  width: 1819px;
+  height: 910px !important;
+  width: 1819px !important;
 }
 
 //---
@@ -528,17 +528,17 @@ $line-heights: (
   gap: 15px;
 }
 .image_4-guide {
-  height: 727px;
-  width: 1032px;
+  height: 727px !important;
+  width: 1032px !important;
 }
 .image_5-guide {
   padding-top: 15px;
-  height: 542px;
-  width: 771px;
+  height: 542px !important;
+  width: 771px !important;
 }
 .image_6_7_8_9_10_11_12-guide {
-  height: 171px;
-  width: 247px;
+  height: 171px !important;
+  width: 247px !important;
 }
 .small-container-guide {
   display: flex;
@@ -546,12 +546,12 @@ $line-heights: (
   gap: 15px;
 }
 .image_13-guide {
-  height: 1098px;
-  width: 1032px;
+  height: 1098px !important;
+  width: 1032px !important;
 }
 .image_14-guide {
-  height: 727px;
-  width: 771px;
+  height: 727px !important;
+  width: 771px !important;
 }
 
 //---
@@ -559,12 +559,12 @@ $line-heights: (
 //---
 
 .image_4_5_12_13-hermetage {
-  height: 356px;
-  width: 509px;
+  height: 356px !important;
+  width: 509px !important;
 }
 .image_6_7_8_9-hermetage {
-  height: 171px;
-  width: 247px;
+  height: 171px !important;
+  width: 247px !important;
 }
 .gap-container {
   display: flex;
@@ -576,16 +576,16 @@ $line-heights: (
   flex-direction: column;
 }
 .image_10_16-hermetage {
-  height: 542px;
-  width: 771px;
+  height: 542px !important;
+  width: 771px !important;
 }
 .image_14-hermetage {
-  height: 356px;
-  width: 771px;
+  height: 356px !important;
+  width: 771px !important;
 }
 .image_11_15-hermetage {
-  height: 542px;
-  width: 1033px;
+  height: 542px !important;
+  width: 1033px !important;
 }
 
 //---
@@ -597,24 +597,24 @@ $line-heights: (
 }
 
 .image_4_5_8_9_10-study {
-  height: 356px;
-  width: 506px;
+  height: 356px !important;
+  width: 506px !important;
 }
 .image_6-study {
-  height: 553px;
-  width: 771px;
+  height: 553px !important;
+  width: 771px !important;
 }
 .image_7-study {
-  height: 727px;
-  width: 1033x;
+  height: 727px !important;
+  width: 1033px !important;
 }
 .image_11_12-study {
-  height: 171px;
-  width: 246px;
+  height: 171px !important;
+  width: 246px !important;
 }
 .image_13-study {
-  height: 542px;
-  width: 1819px;
+  height: 542px !important;
+  width: 1819px !important;
 }
 
 .p15 p {
@@ -626,22 +626,22 @@ $line-heights: (
 //---
 
 .image_4_6-play {
-  height: 542px;
-  width: 1032px;
+  height: 542px !important;
+  width: 1032px !important;
 }
 .image_5-play {
-  height: 542px;
-  width: 771px;
+  height: 542px !important;
+  width: 771px !important;
 }
 .image_7-play {
-  height: 169px;
-  width: 1818px;
+  height: 169px !important;
+  width: 1818px !important;
 }
 .image_8-play {
-  height: 726px;
-  width: 771px;
+  height: 726px !important;
+  width: 771px !important;
 }
 .image_9-play {
-  height: 726px;
-  width: 1032px;
+  height: 726px !important;
+  width: 1032px !important;
 }
