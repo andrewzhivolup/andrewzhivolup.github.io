@@ -18,11 +18,17 @@ body {
   background-color: #000;
   transition: 1s;
 }
+.black a {
+  color: #ffffff;
+}
 
 .white {
   color: #000;
   background-color: #ffffff;
   transition: 1s;
+}
+.white a {
+  color: #000;
 }
 
 .hidden {
@@ -160,21 +166,6 @@ nav ul li a {
 }
 
 //---
-//Footer
-//---
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 35px;
-}
-
-footer p {
-  margin: 0;
-  color: #000;
-  font-size: 18px;
-}
-
-//---
 //CARDS
 //---
 .card-image {
@@ -308,7 +299,6 @@ $image-height2: 727px;
 //---
 
 $line-width: 1px;
-$line-color: #000;
 $line-heights: (
   line_1: 171px,
   line_2: 193px,
@@ -325,7 +315,15 @@ $line-heights: (
   .#{$line} {
     height: $height;
     width: $line-width;
-    background-color: $line-color;
+  }
+
+  .black .#{$line} {
+    color: #000;
+    background-color: #fff;
+  }
+  .white .#{$line} {
+    color: #fff;
+    background-color: #000;
   }
 }
 
@@ -353,7 +351,6 @@ $line-heights: (
 }
 
 .education-text a {
-  color: #000;
   text-decoration: none;
 }
 
@@ -364,7 +361,6 @@ $line-heights: (
 }
 
 .contacts-text a {
-  color: #000;
   text-decoration: none;
 }
 
