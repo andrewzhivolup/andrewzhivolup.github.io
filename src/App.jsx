@@ -375,13 +375,20 @@ function Body({ children }) {
   return <div className="body-wrapper adaptive">{children}</div>;
 }
 
+function createHiddenImages(images) {
+  return images.map((catalogImage) => {
+    return <ImageViewer className="hidden" hidden src={catalogImage} />;
+  });
+}
+
 const catalogImages = [catalog_1, catalog_2, catalog_3];
 
 function Catalog({ refs }) {
   return (
     <div className="catalog">
-      <div ref={refs} className="anchor"></div>
+      <div ref={refs} className="anchor"></div>{" "}
       <ImageGroup>
+        {createHiddenImages(catalogImages)}
         <SliderSlick images={catalogImages} centerPadding={425} />
         <div className="main-container">
           <div className="main-container-text">
@@ -414,10 +421,6 @@ function Catalog({ refs }) {
               </p>
             </div>
           </div>
-
-          <ImageViewer className="hidden" hidden src={catalog_1} />
-          <ImageViewer className="hidden" hidden src={catalog_2} />
-          <ImageViewer className="hidden" hidden src={catalog_3} />
           <ImageViewer className="image_4" src={catalog_4} />
           <ImageViewer className="image_5" src={catalog_5} />
           <ImageViewer className="image_6" src={catalog_6} />
