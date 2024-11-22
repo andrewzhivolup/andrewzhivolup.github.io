@@ -38,7 +38,6 @@ import { ImageViewer } from "./components/ImageViewer";
 import { SliderSlick } from "./components/SliderSlick";
 
 import "./App.scss";
-import { hermitage_16, hermitage_16_mini } from "./assets/2_hermitage";
 
 const titles = {
   0: <span>Дизайнер книг</span>,
@@ -483,16 +482,13 @@ function Hermitage({ refs }) {
             <img className="image_6_7_8_9-hermetage" src={dev_2} />{" "}
           </div>
         </div>
-        <ImageViewer
-          className="image_10_16-hermetage"
-          src={hermitage_16_mini}
-        />
+        <ImageViewer className="image_10_16-hermetage" src={dev_2} />
         <img className="image_11_15-hermetage" src={dev_2} />
         <img className="image_4_5_12_13-hermetage" src={dev_2} />
         <img className="image_4_5_12_13-hermetage" src={dev_2} />
         <img className="image_14-hermetage" src={dev_2} />
         <img className="image_11_15-hermetage" src={dev_2} />
-        <ImageViewer className="image_10_16-hermetage" src={hermitage_16} />
+        <ImageViewer className="image_10_16-hermetage" src={dev_2} />
       </div>
     </div>
   );
