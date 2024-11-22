@@ -14,7 +14,6 @@ import hermitage_13 from "./13.jpg";
 import hermitage_14 from "./14.jpg";
 import hermitage_15 from "./15.jpg";
 import hermitage_16 from "./16.jpg";
-import hermitage_16_mini from "./16_mini.jpg";
 
 export {
   hermitage_1,
@@ -33,5 +32,4 @@ export {
   hermitage_14,
   hermitage_15,
   hermitage_16,
-  hermitage_16_mini,
 };

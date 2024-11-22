@@ -21,6 +21,24 @@ import {
   catalog_8,
   catalog_9,
 } from "./assets/1_catalog";
+import {
+  hermitage_1,
+  hermitage_2,
+  hermitage_3,
+  hermitage_4,
+  hermitage_5,
+  hermitage_6,
+  hermitage_7,
+  hermitage_8,
+  hermitage_9,
+  hermitage_10,
+  hermitage_11,
+  hermitage_12,
+  hermitage_13,
+  hermitage_14,
+  hermitage_15,
+  hermitage_16,
+} from "./assets/2_hermitage";
 import { study_1, study_2, study_3 } from "./assets/4_study";
 import {
   dev_2,
@@ -434,66 +452,69 @@ function Catalog({ refs }) {
   );
 }
 
-const hermitageImages = [dev_2, dev_2, dev_2];
+const hermitageImages = [hermitage_1, hermitage_2, hermitage_3];
 
 function Hermitage({ refs }) {
   return (
     <div className="hermitage">
       <div ref={refs} className="anchor"></div>
-      <SliderSlick images={hermitageImages} centerPadding={425} />
-      <div className="main-container">
-        <div className="main-container-text">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              Книга посвящена Северо-Западной Экспедиции
-              <br />
-              Государственного Эрмитажа. Раскопки ведутся
-              <br />
-              уже более 60 лет, за это время накопилось множество
-              <br />
-              документальных фотографий и находок.
-              <br />
-              <br /> Книга олицетворяет собой раскоп, а её страницы —
-              <br />
-              слои земли, именно поэтому в работе использовалась
-              <br />
-              тонированная бумага.
-            </p>
+      <ImageGroup>
+        {createHiddenImages(hermitageImages)}
+        <SliderSlick images={hermitageImages} centerPadding={425} />
+        <div className="main-container">
+          <div className="main-container-text">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                Книга посвящена Северо-Западной Экспедиции
+                <br />
+                Государственного Эрмитажа. Раскопки ведутся
+                <br />
+                уже более 60 лет, за это время накопилось множество
+                <br />
+                документальных фотографий и находок.
+                <br />
+                <br /> Книга олицетворяет собой раскоп, а её страницы —
+                <br />
+                слои земли, именно поэтому в работе использовалась
+                <br />
+                тонированная бумага.
+              </p>
+            </div>
+
+            <div className="main-container-setting">
+              <p>
+                Формат: 170 × 240 мм
+                <br />
+                Бумага: Colorlab 110 г/м² (G03, I03, G02)
+                <br />
+                372 страницы
+                <br />
+                Фотограф: Маминова Диана
+              </p>
+            </div>
           </div>
 
-          <div className="main-container-setting">
-            <p>
-              Формат: 170 × 240 мм
-              <br />
-              Бумага: Colorlab 110 г/м² (G03, I03, G02)
-              <br />
-              372 страницы
-              <br />
-              Фотограф: Маминова Диана
-            </p>
+          <div className="gap-container-column">
+            <div className="gap-container">
+              <img className="image_4_5_12_13-hermetage" src={hermitage_4} />
+              <img className="image_4_5_12_13-hermetage" src={hermitage_5} />
+            </div>
+            <div className="gap-container">
+              <img className="image_6_7_8_9-hermetage" src={hermitage_6} />
+              <img className="image_6_7_8_9-hermetage" src={hermitage_7} />
+              <img className="image_6_7_8_9-hermetage" src={hermitage_8} />
+              <img className="image_6_7_8_9-hermetage" src={hermitage_9} />{" "}
+            </div>
           </div>
+          <ImageViewer className="image_10_16-hermetage" src={hermitage_10} />
+          <img className="image_11_15-hermetage" src={hermitage_11} />
+          <img className="image_4_5_12_13-hermetage" src={hermitage_12} />
+          <img className="image_4_5_12_13-hermetage" src={hermitage_13} />
+          <img className="image_14-hermetage" src={hermitage_14} />
+          <img className="image_11_15-hermetage" src={hermitage_15} />
+          <ImageViewer className="image_10_16-hermetage" src={hermitage_16} />
         </div>
-
-        <div className="gap-container-column">
-          <div className="gap-container">
-            <img className="image_4_5_12_13-hermetage" src={dev_2} />
-            <img className="image_4_5_12_13-hermetage" src={dev_2} />
-          </div>
-          <div className="gap-container">
-            <img className="image_6_7_8_9-hermetage" src={dev_2} />
-            <img className="image_6_7_8_9-hermetage" src={dev_2} />
-            <img className="image_6_7_8_9-hermetage" src={dev_2} />
-            <img className="image_6_7_8_9-hermetage" src={dev_2} />{" "}
-          </div>
-        </div>
-        <ImageViewer className="image_10_16-hermetage" src={dev_2} />
-        <img className="image_11_15-hermetage" src={dev_2} />
-        <img className="image_4_5_12_13-hermetage" src={dev_2} />
-        <img className="image_4_5_12_13-hermetage" src={dev_2} />
-        <img className="image_14-hermetage" src={dev_2} />
-        <img className="image_11_15-hermetage" src={dev_2} />
-        <ImageViewer className="image_10_16-hermetage" src={dev_2} />
-      </div>
+      </ImageGroup>
     </div>
   );
 }
@@ -1005,7 +1026,7 @@ function App() {
   }, []);
 
   return loading ? (
-      <Loader />
+    <Loader />
   ) : (
     <div className={theme}>
       <Header
@@ -1032,7 +1053,7 @@ function App() {
         />
         <Catalog refs={catalogRef} />
         <Hermitage refs={hermitageRef} />
-        <Dinosaurs refs={dinosaursRef} />
+        {/* <Dinosaurs refs={dinosaursRef} />
         <Study refs={studyRef} />
         <Play refs={playgRef} />
         <Guide refs={guideRef} />
@@ -1040,7 +1061,7 @@ function App() {
         <Performance refs={performanceRef} />
         <Heretics refs={hereticsRef} />
         <Education refs={educationRef} />
-        <Contacts refs={contactsRef} />
+        <Contacts refs={contactsRef} /> */}
       </Body>
       <Footer />
     </div>
