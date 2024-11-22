@@ -996,9 +996,18 @@ function App() {
     _setTheme(scrollTop, setTheme);
   }, [scrollTop]);
 
-  return (
-    <div className={theme}>
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  return loading ? (
       <Loader />
+  ) : (
+    <div className={theme}>
       <Header
         refs={{
           education: educationRef,
