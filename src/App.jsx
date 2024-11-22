@@ -35,6 +35,7 @@ import {
 import { Footer } from "./components/Footer";
 import { ImageGroup } from "./components/ImageGroup";
 import { ImageViewer } from "./components/ImageViewer";
+import { Loader } from "./components/Loader";
 import { SliderSlick } from "./components/SliderSlick";
 
 import "./App.scss";
@@ -997,6 +998,7 @@ function App() {
 
   return (
     <div className={theme}>
+      <Loader />
       <Header
         refs={{
           education: educationRef,
