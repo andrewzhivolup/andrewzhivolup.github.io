@@ -9,6 +9,10 @@ body {
   box-sizing: border-box;
 }
 
+img {
+  object-fit: cover;
+}
+
 .body-wrapper {
   padding-top: 100px;
 }
