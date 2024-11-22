@@ -40,16 +40,7 @@ import {
   hermitage_16,
 } from "./assets/2_hermitage";
 import { study_1, study_2, study_3 } from "./assets/4_study";
-import {
-  dev_2,
-  dev_3,
-  dev_4,
-  dev_5,
-  dev_6,
-  dev_7,
-  dev_8,
-  dev_9,
-} from "./assets/dev";
+import { dev_3, dev_4, dev_5, dev_6, dev_7, dev_8, dev_9 } from "./assets/dev";
 import { Footer } from "./components/Footer";
 import { ImageGroup } from "./components/ImageGroup";
 import { ImageViewer } from "./components/ImageViewer";
@@ -496,22 +487,46 @@ function Hermitage({ refs }) {
 
           <div className="gap-container-column">
             <div className="gap-container">
-              <img className="image_4_5_12_13-hermetage" src={hermitage_4} />
-              <img className="image_4_5_12_13-hermetage" src={hermitage_5} />
+              <ImageViewer
+                className="image_4_5_12_13-hermetage"
+                src={hermitage_4}
+              />
+              <ImageViewer
+                className="image_4_5_12_13-hermetage"
+                src={hermitage_5}
+              />
             </div>
             <div className="gap-container">
-              <img className="image_6_7_8_9-hermetage" src={hermitage_6} />
-              <img className="image_6_7_8_9-hermetage" src={hermitage_7} />
-              <img className="image_6_7_8_9-hermetage" src={hermitage_8} />
-              <img className="image_6_7_8_9-hermetage" src={hermitage_9} />{" "}
+              <ImageViewer
+                className="image_6_7_8_9-hermetage"
+                src={hermitage_6}
+              />
+              <ImageViewer
+                className="image_6_7_8_9-hermetage"
+                src={hermitage_7}
+              />
+              <ImageViewer
+                className="image_6_7_8_9-hermetage"
+                src={hermitage_8}
+              />
+              <ImageViewer
+                className="image_6_7_8_9-hermetage"
+                src={hermitage_9}
+              />{" "}
             </div>
           </div>
           <ImageViewer className="image_10_16-hermetage" src={hermitage_10} />
-          <img className="image_11_15-hermetage" src={hermitage_11} />
-          <img className="image_4_5_12_13-hermetage" src={hermitage_12} />
-          <img className="image_4_5_12_13-hermetage" src={hermitage_13} />
-          <img className="image_14-hermetage" src={hermitage_14} />
-          <img className="image_11_15-hermetage" src={hermitage_15} />
+          <ImageViewer className="image_11_15-hermetage" src={hermitage_11} />
+          <ImageViewer
+            className="image_4_5_12_13-hermetage"
+            src={hermitage_12}
+          />
+          <ImageViewer
+            className="image_4_5_12_13-hermetage"
+            src={hermitage_13}
+          />
+          <ImageViewer className="image_14-hermetage" src={hermitage_14} />
+          <ImageViewer className="image_11_15-hermetage" src={hermitage_15} />
           <ImageViewer className="image_10_16-hermetage" src={hermitage_16} />
         </div>
       </ImageGroup>
