@@ -1,46 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  card_1,
-  card_2,
-  card_3,
-  card_4,
-  card_5,
-  card_6,
-  card_7,
-  card_8,
-  card_9,
-} from "./assets/0_cards";
-import {
-  catalog_1,
-  catalog_2,
-  catalog_3,
-  catalog_4,
-  catalog_5,
-  catalog_6,
-  catalog_7,
-  catalog_8,
-  catalog_9,
-} from "./assets/1_catalog";
-import {
-  hermitage_1,
-  hermitage_2,
-  hermitage_3,
-  hermitage_4,
-  hermitage_5,
-  hermitage_6,
-  hermitage_7,
-  hermitage_8,
-  hermitage_9,
-  hermitage_10,
-  hermitage_11,
-  hermitage_12,
-  hermitage_13,
-  hermitage_14,
-  hermitage_15,
-  hermitage_16,
-} from "./assets/2_hermitage";
-import { study_1, study_2, study_3 } from "./assets/4_study";
-import { dev_3, dev_4, dev_5, dev_6, dev_7, dev_8, dev_9 } from "./assets/dev";
+import * as _cards from "./assets/0_cards";
+import * as _catalog from "./assets/1_catalog";
+import * as _hermitage from "./assets/2_hermitage";
+import * as _dinosaurs from "./assets/3_dinosaurs";
+import * as _study from "./assets/4_study";
+import * as _play from "./assets/5_play";
+import * as _guide from "./assets/6_guide";
+import * as _knockout from "./assets/7_knockout";
+import * as _calendar from "./assets/8_calendar";
+import * as _heretics from "./assets/9_heretics";
 import { Footer } from "./components/Footer";
 import { ImageGroup } from "./components/ImageGroup";
 import { ImageViewer } from "./components/ImageViewer";
@@ -247,7 +215,7 @@ function Card({ src, text, orientation, onClick }) {
 const cards = [
   {
     name: "catalog",
-    src: card_1,
+    src: _cards.card_1,
     text: (
       <span>
         Каталог выставки <br /> Петра Швецова
@@ -257,7 +225,7 @@ const cards = [
   },
   {
     name: "hermitage",
-    src: card_2,
+    src: _cards.card_2,
     text: (
       <span>
         Документальная книга
@@ -271,7 +239,7 @@ const cards = [
   },
   {
     name: "dinosaurs",
-    src: card_3,
+    src: _cards.card_3,
     text: (
       <span>
         Палеонтологический
@@ -285,7 +253,7 @@ const cards = [
   },
   {
     name: "study",
-    src: card_4,
+    src: _cards.card_4,
     text: (
       <span>
         Исследуя
@@ -297,7 +265,7 @@ const cards = [
   },
   {
     name: "play",
-    src: card_5,
+    src: _cards.card_5,
     text: (
       <span>
         Пьеса
@@ -309,7 +277,7 @@ const cards = [
   },
   {
     name: "guide",
-    src: card_6,
+    src: _cards.card_6,
     text: (
       <span>
         Путеводитель
@@ -321,7 +289,7 @@ const cards = [
   },
   {
     name: "knockout",
-    src: card_7,
+    src: _cards.card_7,
     text: (
       <span>
         Книга художника
@@ -333,7 +301,7 @@ const cards = [
   },
   {
     name: "performance",
-    src: card_8,
+    src: _cards.card_8,
     text: (
       <span>
         Календарь
@@ -345,7 +313,7 @@ const cards = [
   },
   {
     name: "heretics",
-    src: card_9,
+    src: _cards.card_9,
     text: (
       <span>
         Книга художника
@@ -386,12 +354,18 @@ function Body({ children }) {
 }
 
 function createHiddenImages(images) {
-  return images.map((catalogImage) => {
-    return <ImageViewer className="hidden" hidden src={catalogImage} />;
+  return images.map((catalogImage, index) => {
+    return (
+      <ImageViewer key={index} className="hidden" hidden src={catalogImage} />
+    );
   });
 }
 
-const catalogImages = [catalog_1, catalog_2, catalog_3];
+const catalogImages = [
+  _catalog.catalog_1,
+  _catalog.catalog_2,
+  _catalog.catalog_3,
+];
 
 function Catalog({ refs }) {
   return (
@@ -431,19 +405,23 @@ function Catalog({ refs }) {
               </p>
             </div>
           </div>
-          <ImageViewer className="image_4" src={catalog_4} />
-          <ImageViewer className="image_5" src={catalog_5} />
-          <ImageViewer className="image_6" src={catalog_6} />
-          <ImageViewer className="image_7" src={catalog_7} />
-          <ImageViewer className="image_8" src={catalog_8} />
-          <ImageViewer className="image_9" src={catalog_9} />
+          <ImageViewer className="image_4" src={_catalog.catalog_4} />
+          <ImageViewer className="image_5" src={_catalog.catalog_5} />
+          <ImageViewer className="image_6" src={_catalog.catalog_6} />
+          <ImageViewer className="image_7" src={_catalog.catalog_7} />
+          <ImageViewer className="image_8" src={_catalog.catalog_8} />
+          <ImageViewer className="image_9" src={_catalog.catalog_9} />
         </div>
       </ImageGroup>
     </div>
   );
 }
 
-const hermitageImages = [hermitage_1, hermitage_2, hermitage_3];
+const hermitageImages = [
+  _hermitage.hermitage_1,
+  _hermitage.hermitage_2,
+  _hermitage.hermitage_3,
+];
 
 function Hermitage({ refs }) {
   return (
@@ -489,411 +467,604 @@ function Hermitage({ refs }) {
             <div className="gap-container">
               <ImageViewer
                 className="image_4_5_12_13-hermetage"
-                src={hermitage_4}
+                src={_hermitage.hermitage_4}
               />
               <ImageViewer
                 className="image_4_5_12_13-hermetage"
-                src={hermitage_5}
+                src={_hermitage.hermitage_5}
               />
             </div>
             <div className="gap-container">
               <ImageViewer
                 className="image_6_7_8_9-hermetage"
-                src={hermitage_6}
+                src={_hermitage.hermitage_6}
               />
               <ImageViewer
                 className="image_6_7_8_9-hermetage"
-                src={hermitage_7}
+                src={_hermitage.hermitage_7}
               />
               <ImageViewer
                 className="image_6_7_8_9-hermetage"
-                src={hermitage_8}
+                src={_hermitage.hermitage_8}
               />
               <ImageViewer
                 className="image_6_7_8_9-hermetage"
-                src={hermitage_9}
-              />{" "}
+                src={_hermitage.hermitage_9}
+              />
             </div>
           </div>
-          <ImageViewer className="image_10_16-hermetage" src={hermitage_10} />
-          <ImageViewer className="image_11_15-hermetage" src={hermitage_11} />
           <ImageViewer
-            className="image_4_5_12_13-hermetage"
-            src={hermitage_12}
+            className="image_10_16-hermetage"
+            src={_hermitage.hermitage_10}
+          />
+          <ImageViewer
+            className="image_11_15-hermetage"
+            src={_hermitage.hermitage_11}
           />
           <ImageViewer
             className="image_4_5_12_13-hermetage"
-            src={hermitage_13}
+            src={_hermitage.hermitage_12}
           />
-          <ImageViewer className="image_14-hermetage" src={hermitage_14} />
-          <ImageViewer className="image_11_15-hermetage" src={hermitage_15} />
-          <ImageViewer className="image_10_16-hermetage" src={hermitage_16} />
+          <ImageViewer
+            className="image_4_5_12_13-hermetage"
+            src={_hermitage.hermitage_13}
+          />
+          <ImageViewer
+            className="image_14-hermetage"
+            src={_hermitage.hermitage_14}
+          />
+          <ImageViewer
+            className="image_11_15-hermetage"
+            src={_hermitage.hermitage_15}
+          />
+          <ImageViewer
+            className="image_10_16-hermetage"
+            src={_hermitage.hermitage_16}
+          />
         </div>
       </ImageGroup>
     </div>
   );
 }
 
-const dinosaursImages = [dev_3, dev_3, dev_3];
+const dinosaursImages = [
+  _dinosaurs.dinosaurs_1,
+  _dinosaurs.dinosaurs_2,
+  _dinosaurs.dinosaurs_3,
+];
 
 function Dinosaurs({ refs }) {
   return (
     <div className="dinosaurs">
-      <div ref={refs} className="anchor"></div>
-      <SliderSlick images={dinosaursImages} centerPadding={425} />
-      <div className="main-container">
-        <div className="main-container-text ">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              Современная интерпретация научно-популярной книги
-              <br />
-              про палеонтологию и динозавров. Адаптированные схемы,
-              <br />
-              таблицы и иллюстрации — все это поможет даже
-              <br />
-              не подготовленному читателю погрузиться в науку.
-            </p>
+      <div ref={refs} className="anchor"></div>{" "}
+      <ImageGroup>
+        {createHiddenImages(dinosaursImages)}
+        <SliderSlick images={dinosaursImages} centerPadding={425} />
+        <div className="main-container">
+          <div className="main-container-text ">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                Современная интерпретация научно-популярной книги
+                <br />
+                про палеонтологию и динозавров. Адаптированные схемы,
+                <br />
+                таблицы и иллюстрации — все это поможет даже
+                <br />
+                не подготовленному читателю погрузиться в науку.
+              </p>
+            </div>
+
+            <div className="main-container-setting dino-setings">
+              <p>
+                Формат: 210 × 297 мм
+                <br />
+                Бумага: мел. матовая 130 г/м²
+                <br />
+                146 страниц
+                <br />
+                Фотограф: Маминова Диана
+              </p>
+            </div>
+            <ImageViewer
+              className="image_6-dino"
+              src={_dinosaurs.dinosaurs_6}
+            />
           </div>
 
-          <div className="main-container-setting dino-setings">
-            <p>
-              Формат: 210 × 297 мм
-              <br />
-              Бумага: мел. матовая 130 г/м²
-              <br />
-              146 страниц
-              <br />
-              Фотограф: Маминова Диана
-            </p>
+          <div className="container-45_7_dino">
+            <div className="container-4_5_dino">
+              <ImageViewer
+                className="image_4_5_8_9-dino"
+                src={_dinosaurs.dinosaurs_4}
+              />
+              <ImageViewer
+                className="image_4_5_8_9-dino"
+                src={_dinosaurs.dinosaurs_5}
+              />
+            </div>
+            <ImageViewer
+              className="image_7-dino"
+              src={_dinosaurs.dinosaurs_7}
+            />
           </div>
-          <img className="image_6-dino" src={dev_3} />
+          <ImageViewer
+            className="image_4_5_8_9-dino"
+            src={_dinosaurs.dinosaurs_8}
+          />
+          <ImageViewer
+            className="image_4_5_8_9-dino"
+            src={_dinosaurs.dinosaurs_9}
+          />
+          <ImageViewer
+            className="image_10-dino"
+            src={_dinosaurs.dinosaurs_10}
+          />
+          <ImageViewer
+            className="image_11_13-dino"
+            src={_dinosaurs.dinosaurs_11}
+          />
+          <ImageViewer
+            className="image_12-dino"
+            src={_dinosaurs.dinosaurs_12}
+          />
+          <ImageViewer
+            className="image_11_13-dino"
+            src={_dinosaurs.dinosaurs_13}
+          />
         </div>
-
-        <div className="container-45_7_dino">
-          <div className="container-4_5_dino">
-            <img className="image_4_5_8_9-dino" src={dev_3} />
-            <img className="image_4_5_8_9-dino" src={dev_3} />
-          </div>
-          <img className="image_7-dino" src={dev_3} />
-        </div>
-        <img className="image_4_5_8_9-dino" src={dev_3} />
-        <img className="image_4_5_8_9-dino" src={dev_3} />
-        <img className="image_10-dino" src={dev_3} />
-        <img className="image_11_13-dino" src={dev_3} />
-        <img className="image_12-dino" src={dev_3} />
-        <img className="image_11_13-dino" src={dev_3} />
-      </div>
+      </ImageGroup>
     </div>
   );
 }
 
-const studyImages = [study_1, study_2, study_3];
+const studyImages = [_study.study_1, _study.study_2, _study.study_3];
 
 function Study({ refs }) {
   return (
     <div className="study black">
       <div ref={refs} className="anchor"></div>
-      <SliderSlick images={studyImages} centerPadding={425} />
-      <div className="main-container">
-        <div className="main-container-text">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              Книга посвящена Северо-Западной Экспедиции
-              <br />
-              Государственного Эрмитажа. Раскопки ведутся
-              <br />
-              уже более 60 лет, за это время накопилось множество
-              <br />
-              документальных фотографий и находок.
-              <br />
-              <br /> Книга олицетворяет собой раскоп, а её страницы —
-              <br />
-              слои земли, именно поэтому в работе использовалась
-              <br />
-              тонированная бумага.
-            </p>
-          </div>
+      <ImageGroup>
+        {createHiddenImages(studyImages)}
+        <SliderSlick images={studyImages} centerPadding={425} />
+        <div className="main-container">
+          <div className="main-container-text">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                Книга посвящена Северо-Западной Экспедиции
+                <br />
+                Государственного Эрмитажа. Раскопки ведутся
+                <br />
+                уже более 60 лет, за это время накопилось множество
+                <br />
+                документальных фотографий и находок.
+                <br />
+                <br /> Книга олицетворяет собой раскоп, а её страницы —
+                <br />
+                слои земли, именно поэтому в работе использовалась
+                <br />
+                тонированная бумага.
+              </p>
+            </div>
 
-          <div className="main-container-setting p15">
-            <p>
-              Формат: 170 × 240 мм
-              <br />
-              Бумага: Colorlab 110 г/м² (G03, I03, G02)
-              <br />
-              372 страницы
-              <br />
-              Фотограф: Маминова Диана
-            </p>
+            <div className="main-container-setting p15">
+              <p>
+                Формат: 170 × 240 мм
+                <br />
+                Бумага: Colorlab 110 г/м² (G03, I03, G02)
+                <br />
+                372 страницы
+                <br />
+                Фотограф: Маминова Диана
+              </p>
+            </div>
+            <ImageViewer className="image_6-study" src={_study.study_6} />
           </div>
-          <img className="image_6-study" src={dev_4} />
-        </div>
-        <div className="gap-container-column">
-          <div className="gap-container">
-            <img className="image_4_5_8_9_10-study" src={dev_4} />
-            <img className="image_4_5_8_9_10-study" src={dev_4} />
+          <div className="gap-container-column">
+            <div className="gap-container">
+              <ImageViewer
+                className="image_4_5_8_9_10-study"
+                src={_study.study_4}
+              />
+              <ImageViewer
+                className="image_4_5_8_9_10-study"
+                src={_study.study_5}
+              />
+            </div>
+            <ImageViewer className="image_7-study" src={_study.study_7} />
           </div>
-          <img className="image_7-study" src={dev_4} />
+          <ImageViewer
+            className="image_4_5_8_9_10-study"
+            src={_study.study_8}
+          />
+          <ImageViewer
+            className="image_4_5_8_9_10-study"
+            src={_study.study_9}
+          />
+          <ImageViewer
+            className="image_4_5_8_9_10-study"
+            src={_study.study_10}
+          />
+          <div className="gap-container-column">
+            <ImageViewer className="image_11_12-study" src={_study.study_11} />
+            <ImageViewer className="image_11_12-study" src={_study.study_12} />
+          </div>
+          <ImageViewer className="image_13-study" src={_study.study_13} />
         </div>
-        <img className="image_4_5_8_9_10-study" src={dev_4} />
-        <img className="image_4_5_8_9_10-study" src={dev_4} />
-        <img className="image_4_5_8_9_10-study" src={dev_4} />
-        <div className="gap-container-column">
-          <img className="image_11_12-study" src={dev_4} />
-          <img className="image_11_12-study" src={dev_4} />
-        </div>
-        <img className="image_13-study" src={dev_4} />
-      </div>
+      </ImageGroup>
     </div>
   );
 }
 
-const playImages = [dev_5, dev_5, dev_5];
+const playImages = [_play.play_1, _play.play_2, _play.play_3];
 
 function Play({ refs }) {
   return (
     <div className="play black">
       <div ref={refs} className="anchor"></div>
-      <SliderSlick images={playImages} centerPadding={425} />
-      <div className="main-container">
-        <div className="main-container-text">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              Книга переносит на страницы спектакль «Дети проходных
-              <br />
-              дворов vol. 2.0», который был поставлен на сцене Лендока
-              <br />
-              в Санкт-Петербурге. Постановка посвящена творчеству
-              <br />
-              группы «КИНО» и его влиянию на молодое поколение.
-              <br />
-              <br />
-              Специально для книги был разработан акцидентный
-              <br />
-              шрифт по мотивам группы «КИНО», а колонэлементы
-              <br />
-              и плакатные развороты были вдохновлены образом
-              <br />
-              музыкальной кассеты.
-            </p>
-          </div>
+      <ImageGroup>
+        {createHiddenImages(playImages)}
+        <SliderSlick images={playImages} centerPadding={425} />
+        <div className="main-container">
+          <div className="main-container-text">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                Книга переносит на страницы спектакль «Дети проходных
+                <br />
+                дворов vol. 2.0», который был поставлен на сцене Лендока
+                <br />
+                в Санкт-Петербурге. Постановка посвящена творчеству
+                <br />
+                группы «КИНО» и его влиянию на молодое поколение.
+                <br />
+                <br />
+                Специально для книги был разработан акцидентный
+                <br />
+                шрифт по мотивам группы «КИНО», а колонэлементы
+                <br />
+                и плакатные развороты были вдохновлены образом
+                <br />
+                музыкальной кассеты.
+              </p>
+            </div>
 
-          <div className="main-container-setting">
-            <p>
-              Формат: 144 × 210 мм
-              <br />
-              Бумага: офсетная 80 г/м²
-              <br />
-              72 страницы
-              <br />
-              Фотограф: Маминова Диана
-            </p>
+            <div className="main-container-setting">
+              <p>
+                Формат: 144 × 210 мм
+                <br />
+                Бумага: офсетная 80 г/м²
+                <br />
+                72 страницы
+                <br />
+                Фотограф: Маминова Диана
+              </p>
+            </div>
           </div>
+          <ImageViewer className="image_4_6-play" src={_play.play_4} />
+          <ImageViewer className="image_5-play" src={_play.play_5} />
+          <ImageViewer className="image_4_6-play" src={_play.play_6} />
+          <ImageViewer className="image_7-play" src={_play.play_7} />
+          <ImageViewer className="image_8-play" src={_play.play_8} />
+          <ImageViewer className="image_9-play" src={_play.play_9} />
         </div>
-        <img className="image_4_6-play" src={dev_5} />
-        <img className="image_5-play" src={dev_5} />
-        <img className="image_4_6-play" src={dev_5} />
-        <img className="image_7-play" src={dev_5} />
-        <img className="image_8-play" src={dev_5} />
-        <img className="image_9-play" src={dev_5} />
-      </div>
+      </ImageGroup>
     </div>
   );
 }
 
-const guideImages = [dev_6, dev_6, dev_6];
+const guideImages = [_guide.guide_1, _guide.guide_2, _guide.guide_3];
 
 function Guide({ refs }) {
   return (
     <div className="guide">
       <div ref={refs} className="anchor"></div>
-      <SliderSlick images={guideImages} centerPadding={425} />
-      <div className="main-container">
-        <div className="main-container-text">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              Путеводитель по западному побережью США, который
-              <br />
-              рассказывает про один из маршрутов путешествия по трем
-              <br />
-              штатам: Калифорния, Аризона и Невада.
-              <br />
-              <br />
-              Главной особенностью книги является то, что большая
-              <br />
-              часть фотографий, а также путевые заметки были
-              <br />
-              предоставлены семьей путешественников.
-              <br />
-              Такой опыт помог превратить обычный путеводитель
-              <br />в документальный фильм на страницах.
-            </p>
-          </div>
-          <div className="main-container-setting guide-setings">
-            <p>
-              Формат: 170 × 250 мм
-              <br />
-              Бумага: мел. глянц. 130 г/м²
-              <br />
-              158 страниц
-              <br />
-              Фотограф: Маминова Диана
-            </p>
-          </div>
-          <div className="second-container-guide">
-            <img className="image_5-guide" src={dev_6} />
-            <div className="small-container-guide">
-              <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
-              <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
-              <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
+      <ImageGroup>
+        {createHiddenImages(guideImages)}
+        <SliderSlick images={guideImages} centerPadding={425} />
+        <div className="main-container">
+          <div className="main-container-text">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                Путеводитель по западному побережью США, который
+                <br />
+                рассказывает про один из маршрутов путешествия по трем
+                <br />
+                штатам: Калифорния, Аризона и Невада.
+                <br />
+                <br />
+                Главной особенностью книги является то, что большая
+                <br />
+                часть фотографий, а также путевые заметки были
+                <br />
+                предоставлены семьей путешественников.
+                <br />
+                Такой опыт помог превратить обычный путеводитель
+                <br />в документальный фильм на страницах.
+              </p>
             </div>
-            <img className="image_14-guide" src={dev_6} />
+            <div className="main-container-setting guide-setings">
+              <p>
+                Формат: 170 × 250 мм
+                <br />
+                Бумага: мел. глянц. 130 г/м²
+                <br />
+                158 страниц
+                <br />
+                Фотограф: Маминова Диана
+              </p>
+            </div>
+            <div className="second-container-guide">
+              <ImageViewer className="image_5-guide" src={_guide.guide_5} />
+              <div className="small-container-guide">
+                <ImageViewer
+                  className="image_6_7_8_9_10_11_12-guide"
+                  src={_guide.guide_6}
+                />
+                <ImageViewer
+                  className="image_6_7_8_9_10_11_12-guide"
+                  src={_guide.guide_7}
+                />
+                <ImageViewer
+                  className="image_6_7_8_9_10_11_12-guide"
+                  src={_guide.guide_8}
+                />
+              </div>
+              <ImageViewer className="image_14-guide" src={_guide.guide_14} />
+            </div>
+          </div>
+          <div className="first-container-guide">
+            <ImageViewer className="image_4-guide" src={_guide.guide_4} />
+            <div className="small-container-guide">
+              <ImageViewer
+                className="image_6_7_8_9_10_11_12-guide"
+                src={_guide.guide_9}
+              />
+              <ImageViewer
+                className="image_6_7_8_9_10_11_12-guide"
+                src={_guide.guide_10}
+              />
+              <ImageViewer
+                className="image_6_7_8_9_10_11_12-guide"
+                src={_guide.guide_11}
+              />
+              <ImageViewer
+                className="image_6_7_8_9_10_11_12-guide"
+                src={_guide.guide_12}
+              />
+            </div>
+            <ImageViewer className="image_13-guide" src={_guide.guide_13} />
           </div>
         </div>
-        <div className="first-container-guide">
-          <img className="image_4-guide" src={dev_6} />
-          <div className="small-container-guide">
-            <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
-            <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
-            <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
-            <img className="image_6_7_8_9_10_11_12-guide" src={dev_6} />
-          </div>
-          <img className="image_13-guide" src={dev_6} />
-        </div>
-      </div>
+      </ImageGroup>
     </div>
   );
 }
 
-const knockoutImages = [dev_7, dev_7, dev_7];
+const knockoutImages = [
+  _knockout.knockout_1,
+  _knockout.knockout_2,
+  _knockout.knockout_3,
+];
 
 function Knockout({ refs }) {
   return (
     <div className="knockout">
       <div ref={refs} className="anchor"></div>
-      <SliderSlick images={knockoutImages} centerPadding={425} />
-      <div className="main-container">
-        <div className="main-container-text">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              «НОКАУТ» — книга художника, которая раскрывает тему
-              <br />
-              юмора и его психологии. На перчатках написаны шутки
-              <br />
-              и анекдоты, что является метафорой использования юмора
-              <br />
-              в повседневной жизни: для защиты, для нападения,
-              <br />
-              для уклонения.
-            </p>
+      <ImageGroup>
+        {createHiddenImages(knockoutImages)}
+        <SliderSlick images={knockoutImages} centerPadding={425} />
+        <div className="main-container">
+          <div className="main-container-text">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                «НОКАУТ» — книга художника, которая раскрывает тему
+                <br />
+                юмора и его психологии. На перчатках написаны шутки
+                <br />
+                и анекдоты, что является метафорой использования юмора
+                <br />
+                в повседневной жизни: для защиты, для нападения,
+                <br />
+                для уклонения.
+              </p>
+            </div>
+            <div className="main-container-setting">
+              <p>Фотограф: Маминова Диана</p>
+            </div>
           </div>
-          <div className="main-container-setting">
-            <p>Фотограф: Маминова Диана</p>
-          </div>
+          <ImageViewer
+            className="image_4-knockout"
+            src={_knockout.knockout_4}
+          />
+          <ImageViewer
+            className="image_5_7-knockout"
+            src={_knockout.knockout_5}
+          />
+          <ImageViewer
+            className="image_6-knockout"
+            src={_knockout.knockout_6}
+          />
+          <ImageViewer
+            className="image_5_7-knockout"
+            src={_knockout.knockout_7}
+          />
+          <ImageViewer
+            className="image_8-knockout"
+            src={_knockout.knockout_8}
+          />
         </div>
-        <img className="image_4-knockout" src={dev_7} />
-        <img className="image_5_7-knockout" src={dev_7} />
-        <img className="image_6-knockout" src={dev_7} />
-        <img className="image_5_7-knockout" src={dev_7} />
-        <img className="image_8-knockout" src={dev_7} />
-      </div>
+      </ImageGroup>
     </div>
   );
 }
 
-const performanceImages = [dev_8, dev_8, dev_8];
+const performanceImages = [
+  _calendar.calendar_1,
+  _calendar.calendar_2,
+  _calendar.calendar_3,
+];
 
 function Performance({ refs }) {
   return (
     <div className="performance black">
       <div ref={refs} className="anchor"></div>
-      <SliderSlick images={performanceImages} centerPadding={425} />
-      <div className="main-container">
-        <div className="main-container-text">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              Календарь посвящен искусству перформанса
-              <br />
-              и его авторам. Каждый месяц рассказывает про новый
-              <br />
-              перформанс через типографические приемы.
-            </p>
+      <ImageGroup>
+        {createHiddenImages(performanceImages)}
+        <SliderSlick images={performanceImages} centerPadding={425} />
+        <div className="main-container">
+          <div className="main-container-text">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                Календарь посвящен искусству перформанса
+                <br />
+                и его авторам. Каждый месяц рассказывает про новый
+                <br />
+                перформанс через типографические приемы.
+              </p>
+            </div>
+          </div>
+          <div className="container-4_5_performance">
+            <ImageViewer
+              className="image_4_5-performance"
+              src={_calendar.calendar_4}
+            />
+            <ImageViewer
+              className="image_4_5-performance"
+              src={_calendar.calendar_5}
+            />
+          </div>
+          <div className="container-small_performance">
+            <ImageViewer
+              className="image_4_6_8_10_11_12_13-performance"
+              src={_calendar.calendar_6}
+            />
+            <ImageViewer
+              className="image_4_6_8_10_11_12_13-performance"
+              src={_calendar.calendar_8}
+            />
+          </div>
+          <ImageViewer
+            className="image_7_9-performance"
+            src={_calendar.calendar_7}
+          />
+          <div className="container-small_performance">
+            <ImageViewer
+              className="image_4_6_8_10_11_12_13-performance"
+              src={_calendar.calendar_10}
+            />
+            <ImageViewer
+              className="image_4_6_8_10_11_12_13-performance"
+              src={_calendar.calendar_11}
+            />
+          </div>
+          <ImageViewer
+            className="image_7_9-performance"
+            src={_calendar.calendar_9}
+          />
+          <div className="container-small_performance">
+            <ImageViewer
+              className="image_4_6_8_10_11_12_13-performance"
+              src={_calendar.calendar_12}
+            />
+            <ImageViewer
+              className="image_4_6_8_10_11_12_13-performance"
+              src={_calendar.calendar_13}
+            />
           </div>
         </div>
-        <div className="container-4_5_performance">
-          <img className="image_4_5-performance" src={dev_8} />
-          <img className="image_4_5-performance" src={dev_8} />
-        </div>
-        <div className="container-small_performance">
-          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
-          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
-        </div>
-        <img className="image_7_9-performance" src={dev_8} />
-        <div className="container-small_performance">
-          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
-          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
-        </div>
-        <img className="image_7_9-performance" src={dev_8} />
-        <div className="container-small_performance">
-          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
-          <img className="image_4_6_8_10_11_12_13-performance" src={dev_8} />
-        </div>
-      </div>
+      </ImageGroup>
     </div>
   );
 }
 
-const hereticsImages = [dev_9, dev_9, dev_9];
+const hereticsImages = [
+  _heretics.heretics_1,
+  _heretics.heretics_2,
+  _heretics.heretics_3,
+];
 
 function Heretics({ refs }) {
   return (
     <div className="heretics black">
       <div ref={refs} className="anchor"></div>
-      <SliderSlick images={hereticsImages} centerPadding={425} />
+      <ImageGroup>
+        {createHiddenImages(hereticsImages)}
+        <SliderSlick images={hereticsImages} centerPadding={425} />
 
-      <div className="main-container">
-        <div className="main-container-text">
-          <div className="main-container-info ibm-plex-sans-regular">
-            <p>
-              Сборник стихотворений «Песни еретиков»посвящен отношениям человека
-              и природы, в текстах описываются чувства людей, которые не могут
-              найти покоя.
-              <br />
-              <br />
-              Для создания иллюстраций был использован наждак, который помимо
-              тактильных ощущений передает звуки стихотворений.
-            </p>
+        <div className="main-container">
+          <div className="main-container-text">
+            <div className="main-container-info ibm-plex-sans-regular">
+              <p>
+                Сборник стихотворений «Песни еретиков»посвящен отношениям
+                человека и природы, в текстах описываются чувства людей, которые
+                не могут найти покоя.
+                <br />
+                <br />
+                Для создания иллюстраций был использован наждак, который помимо
+                тактильных ощущений передает звуки стихотворений.
+              </p>
+            </div>
+
+            <div className="main-container-setting ibm-plex-sans-regular">
+              <p>
+                Формат: 297 × 420 мм
+                <br />
+                Бумага: акварельная тонированная, наждачная
+                <br />
+                9 страниц
+                <br />
+                Фотограф: Маминова Диана
+              </p>
+            </div>
           </div>
 
-          <div className="main-container-setting ibm-plex-sans-regular">
-            <p>
-              Формат: 297 × 420 мм
-              <br />
-              Бумага: акварельная тонированная, наждачная
-              <br />
-              9 страниц
-              <br />
-              Фотограф: Маминова Диана
-            </p>
+          <ImageViewer
+            className="image_4-heretics"
+            src={_heretics.heretics_4}
+          />
+          <ImageViewer
+            className="image_5-heretics"
+            src={_heretics.heretics_5}
+          />
+          <div className="container-6-789">
+            <ImageViewer
+              className="image_6-heretics"
+              src={_heretics.heretics_6}
+            />
+            <div className="container-789">
+              <ImageViewer
+                className="image_7_8_9_11_12-heretics"
+                src={_heretics.heretics_7}
+              />
+              <ImageViewer
+                className="image_7_8_9_11_12-heretics"
+                src={_heretics.heretics_8}
+              />
+              <ImageViewer
+                className="image_7_8_9_11_12-heretics"
+                src={_heretics.heretics_9}
+              />
+            </div>
           </div>
-        </div>
-
-        <img className="image_4-heretics" src={dev_9} />
-        <img className="image_5-heretics" src={dev_9} />
-        <div className="container-6-789">
-          <img className="image_6-heretics" src={dev_9} />
-          <div className="container-789">
-            <img className="image_7_8_9_11_12-heretics" src={dev_9} />
-            <img className="image_7_8_9_11_12-heretics" src={dev_9} />
-            <img className="image_7_8_9_11_12-heretics" src={dev_9} />
+          <ImageViewer
+            className="image_10_13-heretics"
+            src={_heretics.heretics_10}
+          />
+          <div className="container-11-12">
+            <ImageViewer
+              className="image_7_8_9_11_12-heretics"
+              src={_heretics.heretics_11}
+            />
+            <ImageViewer
+              className="image_7_8_9_11_12-heretics"
+              src={_heretics.heretics_12}
+            />
           </div>
+          <ImageViewer
+            className="image_10_13-heretics"
+            src={_heretics.heretics_13}
+          />
         </div>
-        <img className="image_10_13-heretics" src={dev_9} />
-        <div className="container-11-12">
-          <img className="image_7_8_9_11_12-heretics" src={dev_9} />
-          <img className="image_7_8_9_11_12-heretics" src={dev_9} />
-        </div>
-        <img className="image_10_13-heretics" src={dev_9} />
-      </div>
+      </ImageGroup>
     </div>
   );
 }
@@ -998,8 +1169,6 @@ function Contacts({ refs }) {
 }
 
 function App() {
-  const [screenWidth, setScreenWidth] = useState(window.screen.width);
-
   const catalogRef = useRef(null);
   const hermitageRef = useRef(null);
   const dinosaursRef = useRef(null);
@@ -1068,7 +1237,7 @@ function App() {
         />
         <Catalog refs={catalogRef} />
         <Hermitage refs={hermitageRef} />
-        {/* <Dinosaurs refs={dinosaursRef} />
+        <Dinosaurs refs={dinosaursRef} />
         <Study refs={studyRef} />
         <Play refs={playgRef} />
         <Guide refs={guideRef} />
@@ -1076,7 +1245,7 @@ function App() {
         <Performance refs={performanceRef} />
         <Heretics refs={hereticsRef} />
         <Education refs={educationRef} />
-        <Contacts refs={contactsRef} /> */}
+        <Contacts refs={contactsRef} />
       </Body>
       <Footer />
     </div>
