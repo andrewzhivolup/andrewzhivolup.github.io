@@ -440,9 +440,11 @@ $line-heights: (
   width: 1032px;
 }
 .image_6-dino {
-  height: 542px;
+  height: 542px !important;
   width: 771px !important;
-  padding-top: 15px !important;
+}
+.container-6-dino {
+  padding-top: 15px;
 }
 .image_7-dino {
   height: 727px !important;
@@ -536,9 +538,11 @@ $line-heights: (
   width: 1032px !important;
 }
 .image_5-guide {
-  padding-top: 15px;
   height: 542px !important;
   width: 771px !important;
+}
+.container-5-guide {
+  padding-top: 15px;
 }
 .image_6_7_8_9_10_11_12-guide {
   height: 171px !important;

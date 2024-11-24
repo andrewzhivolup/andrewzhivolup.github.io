@@ -569,10 +569,12 @@ function Dinosaurs({ refs }) {
                 Фотограф: Маминова Диана
               </p>
             </div>
-            <ImageViewer
-              className="image_6-dino"
-              src={_dinosaurs.dinosaurs_6}
-            />
+            <div className="container-6-dino">
+              <ImageViewer
+                className="image_6-dino"
+                src={_dinosaurs.dinosaurs_6}
+              />
+            </div>
           </div>
 
           <div className="container-45_7_dino">
@@ -797,7 +799,9 @@ function Guide({ refs }) {
               </p>
             </div>
             <div className="second-container-guide">
-              <ImageViewer className="image_5-guide" src={_guide.guide_5} />
+              <div className="container-5-guide">
+                <ImageViewer className="image_5-guide" src={_guide.guide_5} />
+              </div>
               <div className="small-container-guide">
                 <ImageViewer
                   className="image_6_7_8_9_10_11_12-guide"
