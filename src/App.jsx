@@ -1002,7 +1002,7 @@ function Heretics({ refs }) {
           <div className="main-container-text">
             <div className="main-container-info ibm-plex-sans-regular">
               <p>
-                Сборник стихотворений «Песни еретиков»посвящен отношениям
+                Сборник стихотворений «Песни еретиков» посвящен отношениям
                 человека и природы, в текстах описываются чувства людей, которые
                 не могут найти покоя.
                 <br />
